@@ -12,3 +12,4 @@ venv/
 env/
 ENV/
 venv_ia/
+processed_dataset/

@@ -6,3 +6,9 @@
 .DS_Store
 Thumbs.db
 .env
+
+venv/
+.venv/
+env/
+ENV/
+venv_ia/

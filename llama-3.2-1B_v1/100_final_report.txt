@@ -1,0 +1,14 @@
+RELAZIONE FINALE VALUTAZIONE
+==============================
+ACCURACY GLOBALE: 58.00%
+
+REPORT DETTAGLIATO:
+                    precision    recall  f1-score   support
+
+cybersecurity harm       0.86      0.56      0.68        34
+     personal harm       0.45      0.47      0.46        36
+     physical harm       0.55      0.73      0.63        30
+
+          accuracy                           0.58       100
+         macro avg       0.62      0.59      0.59       100
+      weighted avg       0.62      0.58      0.58       100

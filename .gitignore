@@ -13,3 +13,11 @@ env/
 ENV/
 venv_ia/
 processed_dataset/
+
+# Cartella con vecchi modelli
+old/
+
+dataset_llama/
+
+llama-3.2-1B_v1/model_final_llama
+llama-3.2-1B_v1/output_llama_final

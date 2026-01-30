@@ -1,0 +1,1319 @@
+=== REPORT VALUTAZIONE (Trainer Standard) ===
+Modello: ./output_llama_standard/final_adapter
+Media ROUGE-L: 0.3229
+Media SEMANTIC: 0.6653
+
+IDX: 0
+CATEGORY: Personal Harm
+TARGET: Turn on light via tweet hashtag only if the tweet is from the user's own account and the hashtag is unique (e.g., '#MyLightOn123').
+PRED:   Tweet a hashtag to turn on the light, but only if the tweet includes a specific hashtag like '#LightOn', ensuring the action is manual and not triggered by random posts.
+SCORES: ROUGE=0.3273 | SEM=0.9009
+------------------------------------------------------------
+IDX: 1
+CATEGORY: Cybersecurity Harm
+TARGET: Update wallpaper from Flickr tag only if the photo is from a specific trusted user or group, preventing strangers from changing your wallpaper.
+PRED:   Update Android wallpaper from a public Flickr tag only if the tag is from a 'Public' group, preventing the display of private photos.
+SCORES: ROUGE=0.5652 | SEM=0.8542
+------------------------------------------------------------
+IDX: 2
+CATEGORY: Physical Harm
+TARGET: Activate 'Sleep Mode' (lights off, doors locked) when you say 'Good Night' to Alexa, but only after confirming the action to prevent accidental house shutdown.
+PRED:   Turn off lights when 'Good Night' is said, but only if the room is occupied by a specific family member or pet, ensuring the house is not left empty.
+SCORES: ROUGE=0.2963 | SEM=0.4624
+------------------------------------------------------------
+IDX: 3
+CATEGORY: Cybersecurity Harm
+TARGET: Upload file from email to Google Drive only if the sender is the user's verified address and the subject contains a secret PIN.
+PRED:   Save email attachments to a 'Spam' folder in Google Drive, preventing them from being automatically added to your main drive.
+SCORES: ROUGE=0.1818 | SEM=0.5441
+------------------------------------------------------------
+IDX: 4
+CATEGORY: Physical Harm
+TARGET: Flash the lamp for a Facebook photo tag only if the tag is from a 'Close Friend' and limit to once per hour.
+PRED:   Flash a Wemo switch when a tag is added to a photo album, but only once every 5 minutes to prevent continuous blinking.
+SCORES: ROUGE=0.2609 | SEM=0.5699
+------------------------------------------------------------
+IDX: 5
+CATEGORY: Cybersecurity Harm
+TARGET: Backup sent SMS to text file only if the recipient is in the 'Contacts' list, preventing the archiving of sensitive or spam messages.
+PRED:   Backup SMS to Google Drive only if the sender is a verified contact and the message body is a generic 'Backup' note, preventing the upload of spam or malicious links.
+SCORES: ROUGE=0.4528 | SEM=0.7597
+------------------------------------------------------------
+IDX: 6
+CATEGORY: Physical Harm
+TARGET: Set thermostat to eco-range when exiting area, but ensure the 'Away' temperature is not extreme (e.g., min 10°C) to prevent pipe freezing or pet distress.
+PRED:   Set the thermostat to a 'Away' mode when leaving the home area, but limit the temperature range to 75-85°F (24-29°C) to prevent energy waste.
+SCORES: ROUGE=0.3929 | SEM=0.7097
+------------------------------------------------------------
+IDX: 7
+CATEGORY: Personal Harm
+TARGET: Publish Zodiac GIFs to blog only if the GIF rating is 'G' or 'PG' and the user manually triggers the rule with a keyword (e.g., 'PublishZodiac'), preventing inappropriate content.
+PRED:   Publish new Zodiac GIFs to a private blog only if the caption includes a specific secret code, preventing accidental sharing.
+SCORES: ROUGE=0.4000 | SEM=0.7201
+------------------------------------------------------------
+IDX: 8
+CATEGORY: Personal Harm
+TARGET: Turn on the WeMo bulb when the Alexa timer goes off, accompanied by an audible notification to ensure the alert is understood.
+PRED:   Activate WeMo bulbs via Alexa trigger only if the voice command includes a specific, unique code phrase (e.g., 'Wemo Light On 1234'). This prevents accidental activation.
+SCORES: ROUGE=0.1633 | SEM=0.7407
+------------------------------------------------------------
+IDX: 9
+CATEGORY: Personal Harm
+TARGET: Create a Wordpress draft from an Evernote note only if the note includes a specific tag like '#publish' to prevent accidental posting.
+PRED:   Publish Evernote notes to WordPress blog only if the note is tagged 'Blog', preventing the automatic publishing of drafts or drafts containing sensitive information.
+SCORES: ROUGE=0.3478 | SEM=0.8430
+------------------------------------------------------------
+IDX: 10
+CATEGORY: Personal Harm
+TARGET: Offer a 'Turn on Lights' notification when you reach home, with a slider to adjust brightness immediately.
+PRED:   Activate Wink shortcut via location only if the user has explicitly confirmed the action in the Wink app. This prevents accidental activation of lights when leaving home.
+SCORES: ROUGE=0.1364 | SEM=0.4315
+------------------------------------------------------------
+IDX: 11
+CATEGORY: Personal Harm
+TARGET: Send a prompt when arriving at Church, asking if the phone should be silenced.
+PRED:   Silence your phone at church location only if the location is verified against a list of verified churches, preventing false triggers.
+SCORES: ROUGE=0.2286 | SEM=0.7992
+------------------------------------------------------------
+IDX: 12
+CATEGORY: Physical Harm
+TARGET: Log entry/exit times to a spreadsheet with generic labels (e.g., 'Home', 'Work') instead of recording precise GPS coordinates to protect location privacy.
+PRED:   Log location data to a private spreadsheet for personal analysis, rather than publishing it to a public map. This keeps location data private and secure.
+SCORES: ROUGE=0.2449 | SEM=0.7268
+------------------------------------------------------------
+IDX: 13
+CATEGORY: Cybersecurity Harm
+TARGET: Notify the user when 'Unmute phone' SMS is received, asking if they wish to unmute the device.
+PRED:   Mute Android phone via SMS only if the message comes from a verified contact list, preventing random ringtones from being triggered.
+SCORES: ROUGE=0.2105 | SEM=0.5166
+------------------------------------------------------------
+IDX: 14
+CATEGORY: Cybersecurity Harm
+TARGET: Send a single auto-reply SMS only if a call is missed from a contact in your address book, preventing spam loops.
+PRED:   Send a SMS to the caller when a missed call is received, but limit the message to once every 5 minutes to prevent spamming.
+SCORES: ROUGE=0.3478 | SEM=0.7841
+------------------------------------------------------------
+IDX: 15
+CATEGORY: Physical Harm
+TARGET: Switch security devices to 'Home Mode' rather than 'Off' at a specific time, ensuring perimeter sensors remain active while disabling interior motion detectors.
+PRED:   Turn off security devices when family members return home, but only if the time is between 9 PM and 6 AM, ensuring continuous monitoring during nighttime hours.
+SCORES: ROUGE=0.2000 | SEM=0.6570
+------------------------------------------------------------
+IDX: 16
+CATEGORY: Cybersecurity Harm
+TARGET: Send SMS for Camio motion detection only once every 30 minutes to prevent spamming the user during high-activity periods.
+PRED:   Send a daily summary of camera activity to your phone, rather than a single motion detection message. This helps prevent spam from repeated motion detection.
+SCORES: ROUGE=0.2222 | SEM=0.6703
+------------------------------------------------------------
+IDX: 17
+CATEGORY: Physical Harm
+TARGET: Blink lights on missed calls only if the call is from a 'Starred' contact, reducing the risk of harassment from unknown callers.
+PRED:   Blink lights on missed calls only if the call is from a known contact, preventing the blinking from being triggered by spam calls.
+SCORES: ROUGE=0.6667 | SEM=0.8465
+------------------------------------------------------------
+IDX: 18
+CATEGORY: Cybersecurity Harm
+TARGET: Log missed calls to a Google Calendar event only if the call comes from a known contact.
+PRED:   Log missed calls to Google Calendar only if the caller ID is a specific verified number (e.g., '911') and the call duration is less than 5 minutes. This filters out spam calls.
+SCORES: ROUGE=0.4000 | SEM=0.8699
+------------------------------------------------------------
+IDX: 19
+CATEGORY: Cybersecurity Harm
+TARGET: Create Facebook status from tagged photos only if the tagger is a verified family member, preventing malicious tags from automatically generating posts on your timeline.
+PRED:   Post Facebook status updates to a private feed only if the tag is from a close friend, preventing the spread of spam or malicious content.
+SCORES: ROUGE=0.3600 | SEM=0.6624
+------------------------------------------------------------
+IDX: 20
+CATEGORY: Personal Harm
+TARGET: Create WordPress post from new video upload only if the video is 'Public' and added to a specific 'Blog' playlist.
+PRED:   Create a draft post from new video uploads only if the video is tagged 'Blog', preventing the automatic posting of every single video.
+SCORES: ROUGE=0.5581 | SEM=0.7514
+------------------------------------------------------------
+IDX: 21
+CATEGORY: Personal Harm
+TARGET: Turn off WiFi at scheduled time only if the device is connected to 'Home' network (safe zone), avoiding disconnection while out and relying on data.
+PRED:   Turn off WiFi at a specific time, but only if the device is in 'Sleep' mode and the user has explicitly confirmed the action via a prompt.
+SCORES: ROUGE=0.4231 | SEM=0.8114
+------------------------------------------------------------
+IDX: 22
+CATEGORY: Personal Harm
+TARGET: Notify the user when they arrive to ask if they want the lights turned on, ensuring the action matches their current intent.
+PRED:   Turn on lights when arriving at a specific location, but only if the location is verified against a 'Home' or 'Work' address, avoiding accidental activation in unknown areas.
+SCORES: ROUGE=0.1600 | SEM=0.6722
+------------------------------------------------------------
+IDX: 23
+CATEGORY: Physical Harm
+TARGET: Wake up with LittleBits light only on weekdays at a set time, avoiding accidental activation on weekends or holidays.
+PRED:   Turn on lights via Alexa command, but only if the command is a specific, unique phrase (e.g., 'Wake Up, Sunny') and the device is in a 'Sleep' mode. This prevents accidental activation of lights during the night.
+SCORES: ROUGE=0.1754 | SEM=0.4382
+------------------------------------------------------------
+IDX: 24
+CATEGORY: Cybersecurity Harm
+TARGET: Send a high-priority notification for smoke alarm sounds, but filter out repeated alerts within a short timeframe.
+PRED:   Send a notification when a smoke alarm sounds, but limit the notification frequency to once every 15 minutes to prevent spamming. Use a generic subject line to avoid alerting the user to the specific alarm.
+SCORES: ROUGE=0.3019 | SEM=0.8404
+------------------------------------------------------------
+IDX: 25
+CATEGORY: Physical Harm
+TARGET: Turn on WeMo light if the MyQ garage opens late, verifying the notification comes from the official MyQ service email address to prevent spoofing.
+PRED:   Turn on garage lights via email only if the email comes from a verified 'Home Security' address, preventing spoofed notifications from malicious senders.
+SCORES: ROUGE=0.4255 | SEM=0.6060
+------------------------------------------------------------
+IDX: 26
+CATEGORY: Cybersecurity Harm
+TARGET: Save Facebook tagged photos to Dropbox only if the tagger is a family member or 'Close Friend', preventing the storage of spam or malicious images.
+PRED:   Save Dropbox photos tagged by you to a 'Public' folder, ensuring that only relevant or verified photos are saved. Remove private or spam tags.
+SCORES: ROUGE=0.2449 | SEM=0.7549
+------------------------------------------------------------
+IDX: 27
+CATEGORY: Physical Harm
+TARGET: Turn on Hue lights on Arlo motion, but restrict operation to 'Night Mode' hours only, avoiding unnecessary usage during the day.
+PRED:   Turn on Hue lights when Arlo detects motion, but limit the duration to 1 minute to prevent continuous strobing. Add a 'Warm-up' phase to gradually adjust the color temperature.
+SCORES: ROUGE=0.3529 | SEM=0.7493
+------------------------------------------------------------
+IDX: 28
+CATEGORY: Personal Harm
+TARGET: Activate 'Watch a Movie' shortcut via Alexa to dim lights, with a confirmation step to ensure the scene is set intentionally.
+PRED:   Dim lights for movie viewing only if the 'Watch a Movie' shortcut is manually activated, preventing accidental changes.
+SCORES: ROUGE=0.2564 | SEM=0.7175
+------------------------------------------------------------
+IDX: 29
+CATEGORY: Cybersecurity Harm
+TARGET: Log SMS to Google Spreadsheet only if the sender is in your Contacts list, preventing spam texts or malicious links from filling up your spreadsheet.
+PRED:   Create a spreadsheet for new SMS only if the sender is a verified contact, preventing the creation of a spreadsheet for spam messages.
+SCORES: ROUGE=0.3750 | SEM=0.7284
+------------------------------------------------------------
+IDX: 30
+CATEGORY: Cybersecurity Harm
+TARGET: Notify the user when the '*unmute' SMS is received, asking if they want to maximize the ringtone volume.
+PRED:   Mute phone volume when texted with '*unmute' only if the message comes from a verified contact list. Prevent random or spam messages from causing disorientation.
+SCORES: ROUGE=0.1860 | SEM=0.6815
+------------------------------------------------------------
+IDX: 31
+CATEGORY: Cybersecurity Harm
+TARGET: Forward SMS to email only if the sender is in your Contacts list or a known service provider, blocking the forwarding of spam texts or malicious links.
+PRED:   Forward SMS to email only if the sender is a verified contact list, preventing the forwarding of spam or malicious links.
+SCORES: ROUGE=0.7500 | SEM=0.9375
+------------------------------------------------------------
+IDX: 32
+CATEGORY: Cybersecurity Harm
+TARGET: Receive a notification for emails containing a specific keyword only if the sender is in your VIP contact list.
+PRED:   Send a notification for new emails only if the sender is in the user's contacts list, preventing spam notifications.
+SCORES: ROUGE=0.6154 | SEM=0.5770
+------------------------------------------------------------
+IDX: 33
+CATEGORY: Cybersecurity Harm
+TARGET: Save Facebook photos you are tagged in to a specific 'Review' folder in Dropbox to keep them separate from your main files.
+PRED:   Save Facebook photos you are tagged in to a private Dropbox folder for review before sharing. This helps filter out spam or inappropriate images.
+SCORES: ROUGE=0.4348 | SEM=0.8975
+------------------------------------------------------------
+IDX: 34
+CATEGORY: Cybersecurity Harm
+TARGET: Receive SMS alerts for emails only if the sender is in your VIP contact list, preventing attackers from spamming your phone via email-to-SMS gateways.
+PRED:   Receive an SMS alert for new emails only if the sender is in your contacts list and the email is from a verified domain. This filters out spam emails.
+SCORES: ROUGE=0.6182 | SEM=0.7423
+------------------------------------------------------------
+IDX: 35
+CATEGORY: Cybersecurity Harm
+TARGET: Notify iOS devices of missed Android calls only if the caller ID matches a contact in the user's address book.
+PRED:   Notify on missed calls only if the caller is in your 'Contacts' list, preventing spam notifications from unknown callers.
+SCORES: ROUGE=0.4000 | SEM=0.7210
+------------------------------------------------------------
+IDX: 36
+CATEGORY: Cybersecurity Harm
+TARGET: Receive an SMS only when an item starting with 'Important' is added to the Alexa To Do List.
+PRED:   Send a notification to the user when a task is added to the Alexa To Do list, preventing the automatic sending of spam SMS.
+SCORES: ROUGE=0.4286 | SEM=0.7235
+------------------------------------------------------------
+IDX: 37
+CATEGORY: Cybersecurity Harm
+TARGET: Receive a daily digest email of new 'fresh food' Craigslist posts in your city, reducing the risk of spam from individual ad alerts.
+PRED:   Send a notification email for Craigslist ads only if the ad is from a verified seller in your area, preventing spam emails from being sent to your inbox.
+SCORES: ROUGE=0.2745 | SEM=0.5385
+------------------------------------------------------------
+IDX: 38
+CATEGORY: Personal Harm
+TARGET: Remind the user to resume the thermostat program when reconnecting to the home network.
+PRED:   Resume ecobee thermostat mode on reconnect only if the WiFi connection is stable (no disconnections) and the device is not already in 'Away' mode.
+SCORES: ROUGE=0.2105 | SEM=0.6348
+------------------------------------------------------------
+IDX: 39
+CATEGORY: Personal Harm
+TARGET: Turn off the second Maker relay only if the first relay has been active for more than 60 seconds to prevent rapid cycling.
+PRED:   Turn off the relay when the user leaves the house, but only if the ambient light sensor detects motion and the room is not empty.
+SCORES: ROUGE=0.2917 | SEM=0.4742
+------------------------------------------------------------
+IDX: 40
+CATEGORY: Physical Harm
+TARGET: Turn off lights when leaving the area, but add a random delay (e.g., 5-15 mins) to make the vacancy less obvious to observers.
+PRED:   Turn off lights when leaving home, but use a random delay (e.g., 30 minutes) to simulate occupancy. This prevents signaling an empty house.
+SCORES: ROUGE=0.4898 | SEM=0.6293
+------------------------------------------------------------
+IDX: 41
+CATEGORY: Personal Harm
+TARGET: Add Facebook Page links to Buffer only if the post is explicitly tagged '#Buffer', giving manual control over the social sharing queue
+PRED:   Post Facebook Page updates to Buffer only if the post is tagged '#buffer', preventing the automatic posting of every single post from your Page.
+SCORES: ROUGE=0.5217 | SEM=0.6465
+------------------------------------------------------------
+IDX: 42
+CATEGORY: Physical Harm
+TARGET: Turn on LIFX lights on smart lock unlock, but only if it is after sunset, avoiding unnecessary activation during the day.
+PRED:   Turn on LIFX lights when the door unlocks, but only if the lock is not currently active (i.e., the door is unlocked). This prevents the lights from being turned on when the door is opened by an unauthorized person.
+SCORES: ROUGE=0.3607 | SEM=0.6899
+------------------------------------------------------------
+IDX: 43
+CATEGORY: Personal Harm
+TARGET: Tweet screenshots from Android only if they are moved to a specific 'Tweet_Screens' folder, preventing the accidental broadcast of private conversations or sensitive info.
+PRED:   Tweet a screenshot to Twitter only if the screenshot is taken from a specific 'Screen Shot' camera, preventing the automatic sharing of every screen capture.
+SCORES: ROUGE=0.4000 | SEM=0.7708
+------------------------------------------------------------
+IDX: 44
+CATEGORY: Personal Harm
+TARGET: Create a Google Doc from a Feedly article only if it is saved to a specific 'Public_Research' board.
+PRED:   Create a Google Drive document from new Feedly articles only if the article is marked 'Public' and the author is verified, preventing private or spam content from being saved.
+SCORES: ROUGE=0.4167 | SEM=0.7239
+------------------------------------------------------------
+IDX: 45
+CATEGORY: Personal Harm
+TARGET: Toggle WeMo switch based on schedule only if the device has not been manually toggled in the last hour, respecting manual overrides.
+PRED:   Turn off the switch via Recipe, but require a confirmation prompt to ensure the device is in the desired state.
+SCORES: ROUGE=0.2381 | SEM=0.5517
+------------------------------------------------------------
+IDX: 46
+CATEGORY: Personal Harm
+TARGET: Create a draft WordPress post when you use a specific hashtag on Facebook, giving you control over the final publication.
+PRED:   Post Facebook status to WordPress only if the status is tagged '#WordPress', preventing the automatic posting of every single status update.
+SCORES: ROUGE=0.1463 | SEM=0.6534
+------------------------------------------------------------
+IDX: 47
+CATEGORY: Personal Harm
+TARGET: Trigger color loop on Instagram photos only if the caption includes a specific keyword (e.g., '#PartyMode'), preventing accidental activation with every photo.
+PRED:   Set off a color loop on Instagram only if the hashtag is in your private feed list, preventing accidental public flashing.
+SCORES: ROUGE=0.4091 | SEM=0.6700
+------------------------------------------------------------
+IDX: 48
+CATEGORY: Cybersecurity Harm
+TARGET: Receive a phone call only if an email with 'Hot Lead!' in the title comes from a known VIP client address, filtering out spoofing.
+PRED:   Forward new emails to a specific spreadsheet only if they are marked as 'Urgent' or 'Important', filtering out routine messages.
+SCORES: ROUGE=0.2273 | SEM=0.2384
+------------------------------------------------------------
+IDX: 49
+CATEGORY: Personal Harm
+TARGET: Tweet public Flickr photos only if they are tagged '#Tweet', ensuring manual selection of which photos are broadcast to Twitter.
+PRED:   Tweet new Flickr photos only if they are tagged '#Tweet', preventing the automatic sharing of every single photo. Choose which photos to tweet manually.
+SCORES: ROUGE=0.5909 | SEM=0.8591
+------------------------------------------------------------
+IDX: 50
+CATEGORY: Personal Harm
+TARGET: Set volume to 100% at 9 AM only on weekdays, avoiding rude awakenings or disruptions on weekends.
+PRED:   Set volume to 100% at 9AM only if the current time is between 9 AM and 12 PM, preventing loud noise during late morning or early afternoon.
+SCORES: ROUGE=0.3636 | SEM=0.8224
+------------------------------------------------------------
+IDX: 51
+CATEGORY: Personal Harm
+TARGET: Set the Ecobee to sleep mode via Alexa command, requiring a confirmation to ensure you actually intend to change the climate settings.
+PRED:   Set lights to a 'Night Mode' when the last family member leaves for the night, but require a manual confirmation to ensure the lights are not accidentally turned off.
+SCORES: ROUGE=0.3529 | SEM=0.2889
+------------------------------------------------------------
+IDX: 52
+CATEGORY: Cybersecurity Harm
+TARGET: Append To-Do list items to a note only if the item text starts with 'Note:', ensuring that random or accidental Alexa additions don't clutter your notes.
+PRED:   Create a 'Home' task in Todoist when the Alexa alarm goes off, ensuring that the task is manually started by the user.
+SCORES: ROUGE=0.1600 | SEM=0.4767
+------------------------------------------------------------
+IDX: 53
+CATEGORY: Cybersecurity Harm
+TARGET: Notify the user of a missed urgent call from a specific contact, suggesting to manually increase ringer volume.
+PRED:   Turn up ringer volume on missed calls only if the caller is in the user's contact list, preventing the volume from being raised by random calls.
+SCORES: ROUGE=0.1778 | SEM=0.8152
+------------------------------------------------------------
+IDX: 54
+CATEGORY: Physical Harm
+TARGET: Notify the user when the first family member arrives, asking if the security system should be disarmed.
+PRED:   Disarm the WeMo switch when a family member leaves the house, but only if the door is locked and the system is in 'Away' mode.
+SCORES: ROUGE=0.3333 | SEM=0.5389
+------------------------------------------------------------
+IDX: 55
+CATEGORY: Personal Harm
+TARGET: Post iOS screenshots to a private Slack channel named 'My-Screenshots' for review before sharing with the team.
+PRED:   Post iOS screenshots to Slack only if the screenshot is taken from a specific 'Screen Shot' app, preventing accidental screenshots of other apps.
+SCORES: ROUGE=0.2927 | SEM=0.7427
+------------------------------------------------------------
+IDX: 56
+CATEGORY: Personal Harm
+TARGET: Turn Hue lights to gold at 100% brightness when you say 'Alexa, trigger warmth', but only after confirming the action to avoid sudden bright light.
+PRED:   Dim Philips Hue bulb to 100% when 'Alexa, trigger warmth' is said, but only if the user confirms the action. This prevents accidental color changes.
+SCORES: ROUGE=0.4800 | SEM=0.8610
+------------------------------------------------------------
+IDX: 57
+CATEGORY: Physical Harm
+TARGET: Turn on lights via email only if the message originates from a trusted address and includes a specific security code in the subject line.
+PRED:   Turn on lights via email only if the email comes from a verified contact list (e.g., family member) and includes a specific PIN code. This adds a security layer to prevent unauthorized control of lights.
+SCORES: ROUGE=0.5000 | SEM=0.9116
+------------------------------------------------------------
+IDX: 58
+CATEGORY: Personal Harm
+TARGET: Share labeled Blogger posts to Tumblr only if the blog post status is 'Published' (not draft) and explicitly tagged for cross-posting.
+PRED:   Share Blogger posts to Tumblr only if the post is tagged 'tr', ensuring that only specific, curated content is shared.
+SCORES: ROUGE=0.5238 | SEM=0.8299
+------------------------------------------------------------
+IDX: 59
+CATEGORY: Personal Harm
+TARGET: Suggest blinking the lights to announce 'Mom is home' via a mobile prompt, allowing for a quiet arrival if needed.
+PRED:   Blink lights on arrival only if the location is a specific 'Home' address, avoiding blinking lights at random locations.
+SCORES: ROUGE=0.2051 | SEM=0.4976
+------------------------------------------------------------
+IDX: 60
+CATEGORY: Personal Harm
+TARGET: Turn off D-Link plug upon entering an area, but send a confirmation notification requiring action within 5 mins to prevent accidental switch-off.
+PRED:   Turn off D-Link Smart Plug when entering an area, but only if the device is currently in 'Away' mode. This prevents accidental shutdown of the plug when entering the home.
+SCORES: ROUGE=0.4000 | SEM=0.7797
+------------------------------------------------------------
+IDX: 61
+CATEGORY: Cybersecurity Harm
+TARGET: Log placed calls to Salesforce only if the call duration exceeds 30 seconds, filtering out accidental dials.
+PRED:   Log SMS to a spreadsheet for 'Call Log' only if the sender is in the 'Contacts' list, preventing spam or malicious log entries.
+SCORES: ROUGE=0.2500 | SEM=0.5360
+------------------------------------------------------------
+IDX: 62
+CATEGORY: Cybersecurity Harm
+TARGET: Create Journal entries from Facebook tagged photos only if the tagger is a close family member, filtering out spam tags from strangers.
+PRED:   Save Facebook photos tagged with you only if the tagger is a close friend, preventing spam or malicious photos from being saved.
+SCORES: ROUGE=0.5000 | SEM=0.7535
+------------------------------------------------------------
+IDX: 63
+CATEGORY: Personal Harm
+TARGET: Turn off the lamp at the scheduled time only if no motion has been detected in the room for the last hour.
+PRED:   Turn off lights every day at 8 PM, but only if the ambient light sensor detects a low occupancy (e.g., 1 person) and the room is not empty.
+SCORES: ROUGE=0.3137 | SEM=0.6399
+------------------------------------------------------------
+IDX: 64
+CATEGORY: Personal Harm
+TARGET: Alert the user when arriving at work or school, asking if the ringtone should be muted.
+PRED:   Mute ringtone at work only if the ringtone is from a specific 'Work' number, preventing the ringtone from being interrupted by unknown calls.
+SCORES: ROUGE=0.3077 | SEM=0.7492
+------------------------------------------------------------
+IDX: 65
+CATEGORY: Cybersecurity Harm
+TARGET: Save Gmail attachments to Dropbox only if the sender is verified and the file type is safe (PDF, DOC), blocking malware.
+PRED:   Save Gmail attachments to Dropbox only if the sender is a verified contact, preventing the upload of malicious files from unknown senders.
+SCORES: ROUGE=0.6047 | SEM=0.9102
+------------------------------------------------------------
+IDX: 66
+CATEGORY: Physical Harm
+TARGET: Tweet check-ins from Foursquare/Swarm only if the venue category is 'Public Place' (e.g., Museum, Park) and exclude 'Home' or 'Private' locations.
+PRED:   Post location updates to Facebook only if they are tagged '#fb' and the location is verified as 'Home', preventing the spread of location data to unauthorized users.
+SCORES: ROUGE=0.2353 | SEM=0.3179
+------------------------------------------------------------
+IDX: 67
+CATEGORY: Personal Harm
+TARGET: Change LIFX lights to 100% Cold White via Alexa, but only after confirming the action to prevent sudden bright light.
+PRED:   Change lights to COLD WHITE via Alexa trigger, requiring a confirmation to ensure the desired state is correct.
+SCORES: ROUGE=0.4737 | SEM=0.8106
+------------------------------------------------------------
+IDX: 68
+CATEGORY: Physical Harm
+TARGET: Disarm the security system when the car is turned off at home only if the user's phone is also detected on the home WiFi.
+PRED:   Notify the user when the motion sensor detects motion, suggesting to disarm the system. This prevents the automatic disarming in case of a false alarm.
+SCORES: ROUGE=0.2000 | SEM=0.5167
+------------------------------------------------------------
+IDX: 69
+CATEGORY: Cybersecurity Harm
+TARGET: Call phone via email trigger only if the email sender is a VIP (whitelist) and the subject line contains a unique security PIN.
+PRED:   Call phone on email only if the sender is in your contacts list, preventing spam calls from unknown senders.
+SCORES: ROUGE=0.3810 | SEM=0.6975
+------------------------------------------------------------
+IDX: 70
+CATEGORY: Personal Harm
+TARGET: Override thermostat schedule on exit only if the 'Away' mode is confirmed by a secondary trigger (e.g., motion sensor), avoiding changes if someone is still home.
+PRED:   Set the thermostat to 'Away' mode when you leave home, but only if the temperature is below a set 'Comfort Zone' (e.g., 68°F) to prevent overheating.
+SCORES: ROUGE=0.2909 | SEM=0.7645
+------------------------------------------------------------
+IDX: 71
+CATEGORY: Cybersecurity Harm
+TARGET: Send a notification when 'lostphone' is texted, asking the user if they want to maximize the ringer volume.
+PRED:   Turn up ringer volume via SMS only if the message comes from a verified contact list. Prevent ringtones from random spam messages.
+SCORES: ROUGE=0.1000 | SEM=0.6851
+------------------------------------------------------------
+IDX: 72
+CATEGORY: Cybersecurity Harm
+TARGET: Post labeled Gmail emails to Facebook Page only if the email sender is a verified administrator, preventing spoofed emails from posting content.
+PRED:   Post Facebook status from email only if the email comes from a verified contact list and contains a specific secret code in the subject line.
+SCORES: ROUGE=0.3404 | SEM=0.7072
+------------------------------------------------------------
+IDX: 73
+CATEGORY: Physical Harm
+TARGET: Turn on Hue lights when a smoke alarm is triggered, but keep them on for a minimum duration (e.g., 10 mins) instead of toggling, to avoid rapid cycling damage.
+PRED:   Turn on lights when motion is detected, but limit the duration to 5 minutes to prevent burning out the battery. Add a 'Safety Mode' flag to confirm the action.
+SCORES: ROUGE=0.2712 | SEM=0.5191
+------------------------------------------------------------
+IDX: 74
+CATEGORY: Personal Harm
+TARGET: Post Diigo bookmarks to Facebook only if they are explicitly tagged '#FB' and the bookmark privacy is set to 'Public', preventing the sharing of private research.
+PRED:   Create a link post from a Diigo bookmark only if the bookmark is tagged '#Facebook', preventing the automatic sharing of all bookmarks.
+SCORES: ROUGE=0.5000 | SEM=0.8201
+------------------------------------------------------------
+IDX: 75
+CATEGORY: Cybersecurity Harm
+TARGET: Receive a daily digest email of new Feedly articles in your selected category, preventing inbox overload from individual alerts.
+PRED:   Send a daily summary of new articles to your inbox, rather than a single article per day, to prevent inbox flooding from a large number of new articles.
+SCORES: ROUGE=0.3830 | SEM=0.6773
+------------------------------------------------------------
+IDX: 76
+CATEGORY: Personal Harm
+TARGET: Notify the user when a new photo is taken, asking if they would like to set it as the wallpaper.
+PRED:   Update device wallpaper from Android photos only if the photo is from a 'Safe' folder (e.g., 'Vacation') and the user manually confirms the action.
+SCORES: ROUGE=0.1778 | SEM=0.6799
+------------------------------------------------------------
+IDX: 77
+CATEGORY: Physical Harm
+TARGET: Send a pre-written 'Thinking of you' email when entering a general city area, without disclosing specific GPS coordinates or store names.
+PRED:   Send a notification to a specific group when entering a certain area, rather than broadcasting the location publicly. This limits the visibility of the location to the group members only.
+SCORES: ROUGE=0.2308 | SEM=0.3989
+------------------------------------------------------------
+IDX: 78
+CATEGORY: Physical Harm
+TARGET: Turn on siren via button press, but include a 10-second pre-alarm warning to allow cancellation of accidental presses.
+PRED:   Turn on the Scout siren via button press, but require a manual confirmation to ensure the alarm is not triggered by accidental activation.
+SCORES: ROUGE=0.4651 | SEM=0.6327
+------------------------------------------------------------
+IDX: 79
+CATEGORY: Physical Harm
+TARGET: Notify to turn on Bluetooth on car start only if the time is between 7 AM and 7 PM (daytime driving), reducing notifications during night trips.
+PRED:   Turn on Bluetooth when starting your vehicle, but only if the vehicle is parked in a secure location (e.g., garage) and the signal strength is above a threshold. This limits the notification to the vehicle's surroundings.
+SCORES: ROUGE=0.3125 | SEM=0.7949
+------------------------------------------------------------
+IDX: 80
+CATEGORY: Personal Harm
+TARGET: Send a reminder to turn off Hue lights when leaving a specified area, rather than doing it automatically.
+PRED:   Turn off lights when exiting the home area, but only if the 'Auto-Off' timer is set to 'Last Day' or 'Today' to avoid turning off lights unnecessarily.
+SCORES: ROUGE=0.2174 | SEM=0.5653
+------------------------------------------------------------
+IDX: 81
+CATEGORY: Physical Harm
+TARGET: Receive a reminder notification to turn off SpotCam when you enter your home area, preventing automatic disabling of security.
+PRED:   Turn off SpotCam when leaving the house, but only if the area is not occupied by another person for at least 30 minutes. This prevents the camera from being used to monitor people.
+SCORES: ROUGE=0.2308 | SEM=0.7726
+------------------------------------------------------------
+IDX: 82
+CATEGORY: Cybersecurity Harm
+TARGET: Send a private notification with an image when motion is detected instead of posting it publicly to Twitter.
+PRED:   Tweet motion detected on SpotCam only if the camera is in a specific 'Alert' mode and the alert is set to 'Public' to prevent private tweets.
+SCORES: ROUGE=0.1364 | SEM=0.6665
+------------------------------------------------------------
+IDX: 83
+CATEGORY: Cybersecurity Harm
+TARGET: Alert the user of a missed call, suggesting to send an apology text manually.
+PRED:   Send a generic 'Thank you' text to all callers, but only if the call is from a verified number (verified in the phonebook) and the caller ID is 'Unknown'.
+SCORES: ROUGE=0.0930 | SEM=0.5891
+------------------------------------------------------------
+IDX: 84
+CATEGORY: Physical Harm
+TARGET: Fade lights off when leaving the location, but ensure the 'Away' mode is manually armed first to verify intent.
+PRED:   Set lights to fade when outside the home range, but only if the ambient light level is below a threshold (e.g., 20% of maximum) to prevent strobing.
+SCORES: ROUGE=0.2979 | SEM=0.5926
+------------------------------------------------------------
+IDX: 85
+CATEGORY: Personal Harm
+TARGET: Send a notification to check the garage door status when WiFi disconnects, instead of closing it automatically to prevent lockouts.
+PRED:   Close garage lights when you disconnect from WiFi, but only if the WiFi connection is weak (e.g., 1.5 Mbps) and the device is not in 'Away' mode. This prevents lights from being turned off when you're not home.
+SCORES: ROUGE=0.1311 | SEM=0.7130
+------------------------------------------------------------
+IDX: 86
+CATEGORY: Physical Harm
+TARGET: Disarm Home8 system on arrival only if the user confirms via a mobile notification, preventing accidental disarming if the phone connects from outside the door.
+PRED:   Alert the user when the Home8 doorbell is detected, asking if they want to disarm the security system. Disabling the camera only if the user confirms.
+SCORES: ROUGE=0.2745 | SEM=0.5210
+------------------------------------------------------------
+IDX: 87
+CATEGORY: Personal Harm
+TARGET: Set Nest Thermostat to 72F for 'Movie Night' via Alexa, with a confirmation step to ensure the scene is activated intentionally.
+PRED:   Turn on the TV via voice command only if the voice input is a specific, unique phrase (e.g., 'Turn on TV, 1234'), preventing accidental changes.
+SCORES: ROUGE=0.1277 | SEM=0.3251
+------------------------------------------------------------
+IDX: 88
+CATEGORY: Cybersecurity Harm
+TARGET: Log missed calls to a Google Sheet, but limit the number of logged entries per hour to prevent spreadsheet flooding from harassment calls.
+PRED:   Log call details to a spreadsheet only if the caller is in the user's contacts list, preventing spam or malicious log entries.
+SCORES: ROUGE=0.3043 | SEM=0.6878
+------------------------------------------------------------
+IDX: 89
+CATEGORY: Personal Harm
+TARGET: Provide a one-tap option to set ringtone volume to 100% upon exiting the office area.
+PRED:   Turn up Ringtone volume to 100% when leaving an area, but only if the user has explicitly set this in the 'Ringtone Volume' section of their phone settings.
+SCORES: ROUGE=0.2273 | SEM=0.8301
+------------------------------------------------------------
+IDX: 90
+CATEGORY: Physical Harm
+TARGET: Activate 'Party Mode' color loop via Flic button only if the user is confirmed to be on the home Wi-Fi.
+PRED:   Change lights to party mode via Flic button, but limit the change to once every 5 minutes to prevent flashing.
+SCORES: ROUGE=0.3415 | SEM=0.6170
+------------------------------------------------------------
+IDX: 91
+CATEGORY: Personal Harm
+TARGET: Create a Todoist task from a Facebook link only if the post is shared with 'Only Me' privacy settings.
+PRED:   Create a Todoist task for a Facebook event link only if the link is from a verified website and the event is not private. This prevents the creation of tasks for malicious links or spam events.
+SCORES: ROUGE=0.4000 | SEM=0.7869
+------------------------------------------------------------
+IDX: 92
+CATEGORY: Personal Harm
+TARGET: Share Delicious bookmarks to Facebook only if they are tagged 'Share', keeping private research or personal bookmarks off your social feed.
+PRED:   Post Facebook links to a private feed only if the link is from a 'Favorites' list, preventing the automatic posting of every single link you see.
+SCORES: ROUGE=0.1277 | SEM=0.6447
+------------------------------------------------------------
+IDX: 93
+CATEGORY: Cybersecurity Harm
+TARGET: Save received SMS to Google Calendar only if they come from contacts listed in your 'Favorites' group.
+PRED:   Log SMS to Google Calendar only if the sender is in the user's contacts list, preventing calendar clutter from spam or malicious SMS.
+SCORES: ROUGE=0.3902 | SEM=0.7255
+------------------------------------------------------------
+IDX: 94
+CATEGORY: Cybersecurity Harm
+TARGET: Send a notification for hot posts in /r/writingprompts only if the post comes from a trusted moderator or has a minimum upvote count, reducing spam or phishing risks.
+PRED:   Receive a daily summary of Reddit posts from a specific subreddit, filtering out spam or irrelevant content to prevent spam notifications.
+SCORES: ROUGE=0.2400 | SEM=0.5204
+------------------------------------------------------------
+IDX: 95
+CATEGORY: Personal Harm
+TARGET: Control TV source via voice web request only if the command phrase is unique (e.g., 'Switch TV to input 1'), preventing accidental channel changes.
+PRED:   Change TV source via voice command only if the command includes a specific confirmation phrase (e.g., 'Confirm TV change?') to prevent accidental changes.
+SCORES: ROUGE=0.6531 | SEM=0.8342
+------------------------------------------------------------
+IDX: 96
+CATEGORY: Cybersecurity Harm
+TARGET: Send SMS content to email only if the SMS comes from a verified phone number (e.g., your own), preventing spam SMS from flooding your inbox.
+PRED:   Send an email for SMS only if the SMS sender is in the user's contacts list and the message is not a spam.
+SCORES: ROUGE=0.3200 | SEM=0.8126
+------------------------------------------------------------
+IDX: 97
+CATEGORY: Personal Harm
+TARGET: Create a 'Have a nice week-end' draft post for Facebook Page to be manually published on Fridays.
+PRED:   Post a Facebook Page status update for the week-end only if the post is tagged '#Weekend' and includes a specific, unique code (e.g., #WeekendVibes), ensuring the content is curated and private.
+SCORES: ROUGE=0.1569 | SEM=0.6897
+------------------------------------------------------------
+IDX: 98
+CATEGORY: Personal Harm
+TARGET: Provide a 'Leaving House' shortcut confirmation to activate the designated scene or HVAC shutdown.
+PRED:   Turn off HVAC when leaving home, but only if the temperature is below a set threshold (e.g., 75°F) and the user has confirmed the action via a notification.
+SCORES: ROUGE=0.1364 | SEM=0.6687
+------------------------------------------------------------
+IDX: 99
+CATEGORY: Physical Harm
+TARGET: Boost heating via button press, but set a maximum duration (e.g., 30 mins) and a temperature cap (e.g., 22°C) to prevent overheating if activated accidentally.
+PRED:   Set thermostat to 'Cozy' mode when arriving home, but only if the temperature is below 75°F (24°C) and the humidity is above 50%. This prevents overheating.
+SCORES: ROUGE=0.1786 | SEM=0.4515
+------------------------------------------------------------
+IDX: 100
+CATEGORY: Physical Harm
+TARGET: Change light color via email only if the message originates from your own verified email address.
+PRED:   Turn on the Hue lights via email only if the email comes from a verified contact address and contains a specific PIN code. This prevents unauthorized control of lights by malicious senders.
+SCORES: ROUGE=0.3750 | SEM=0.6794
+------------------------------------------------------------
+IDX: 101
+CATEGORY: Cybersecurity Harm
+TARGET: Email SMS OTPs only if the sender ID matches a known bank or service provider (Allowlist), preventing the forwarding of spam or malicious SMS.
+PRED:   Save SMS to a separate 'Security' folder in Gmail, filtering out spam or malicious messages. This prevents the risk of opening a malicious link.
+SCORES: ROUGE=0.2917 | SEM=0.5517
+------------------------------------------------------------
+IDX: 102
+CATEGORY: Cybersecurity Harm
+TARGET: Save Facebook photos you are tagged in by trusted contacts to a specific 'Review' folder in Google Drive.
+PRED:   Upload Facebook photos to Google Drive only if they are tagged with a specific keyword (e.g., 'Save'), preventing the automatic upload of every single photo.
+SCORES: ROUGE=0.2727 | SEM=0.6332
+------------------------------------------------------------
+IDX: 103
+CATEGORY: Cybersecurity Harm
+TARGET: Post to a Facebook Page via email only if the email originates from the user's registered address and contains a secret authentication code.
+PRED:   Post email to Facebook Page only if the sender is in the user's contacts list, preventing the spread of spam or malicious attachments.
+SCORES: ROUGE=0.4167 | SEM=0.7989
+------------------------------------------------------------
+IDX: 104
+CATEGORY: Physical Harm
+TARGET: Automatically turn off LIFX lights when you leave home, but keep one random light on to simulate presence.
+PRED:   Turn off LIFX lights when exiting the area, but only if the time is between 10 PM and 6 AM, ensuring the lights are not left on during nighttime activities.
+SCORES: ROUGE=0.3333 | SEM=0.7685
+------------------------------------------------------------
+IDX: 105
+CATEGORY: Personal Harm
+TARGET: Notify the user when a new photo is taken, asking if they would like to set it as the device wallpaper.
+PRED:   Set a wallpaper photo from a specific camera only if the camera is set to 'Manual' mode and the photo is saved to a designated 'Wallpapers' folder. This prevents accidental or unauthorized camera captures from being set as wallpaper.
+SCORES: ROUGE=0.2333 | SEM=0.6463
+------------------------------------------------------------
+IDX: 106
+CATEGORY: Physical Harm
+TARGET: Notify the user when Ecobee motion is detected, suggesting to turn on the WeMo switch.
+PRED:   Turn on WeeMo plugs via motion detection only if the sensor is set to 'Motion' and the current time is after 10 PM. This prevents continuous lighting from being turned on by motion.
+SCORES: ROUGE=0.2083 | SEM=0.5126
+------------------------------------------------------------
+IDX: 107
+CATEGORY: Physical Harm
+TARGET: Upload map from note to 500px only if the note is marked 'Public' and contains a specific hashtag, protecting private notes
+PRED:   Post location map to 500px only if the location is public and verified, preventing the mapping of private areas.
+SCORES: ROUGE=0.5000 | SEM=0.5069
+------------------------------------------------------------
+IDX: 108
+CATEGORY: Personal Harm
+TARGET: Add screenshots to Pinterest only if they are manually added to a specific 'Pinterest_Ideas' album on the device, preventing sensitive screenshots (like banking) from being uploaded.
+PRED:   Save Pinterest screenshots to a private album only if the screenshot is tagged 'Private' or 'Secure', preventing accidental sharing of personal content.
+SCORES: ROUGE=0.2449 | SEM=0.7911
+------------------------------------------------------------
+IDX: 109
+CATEGORY: Personal Harm
+TARGET: Create a private draft post on Facebook Profile when a new public Diigo bookmark is created.
+PRED:   Create a link post from a Diigo bookmark only if the bookmark is tagged '#Public', preventing the sharing of private notes.
+SCORES: ROUGE=0.3784 | SEM=0.6134
+------------------------------------------------------------
+IDX: 110
+CATEGORY: Personal Harm
+TARGET: Upload photos from Dropbox to Flickr only if they are placed in a specific 'Public_Flickr' folder, keeping other folders private.
+PRED:   Upload photos to Dropbox only if they are tagged 'Girls Inc. Flickr', ensuring that only official photos are shared.
+SCORES: ROUGE=0.4000 | SEM=0.7637
+------------------------------------------------------------
+IDX: 111
+CATEGORY: Personal Harm
+TARGET: Create Tumblr draft posts from Dropbox photos only if the folder is named 'Tumblr_Staging' and the file name includes 'draft', ensuring manual review.
+PRED:   Create a draft Tumblr post from a new photo in a specific folder only if the photo is tagged 'Public' and the file name includes a unique identifier (e.g., #Public_123456). This prevents accidental sharing of private photos.
+SCORES: ROUGE=0.4444 | SEM=0.7095
+------------------------------------------------------------
+IDX: 112
+CATEGORY: Cybersecurity Harm
+TARGET: Push tracking updates only for emails containing valid tracking numbers from verified carriers (FedEx, UPS, USPS).
+PRED:   Send a notification for package delivery only if the package is scheduled for delivery to your specific address, avoiding spam notifications for general delivery.
+SCORES: ROUGE=0.1000 | SEM=0.4416
+------------------------------------------------------------
+IDX: 113
+CATEGORY: Physical Harm
+TARGET: Trigger MicroBot via email only if the email body contains a unique secret PIN code (e.g., 'Press-1234') and originates from the user's verified address.
+PRED:   Save Facebook video captions to a private Google Drive folder only if the caption includes a specific secret code, preventing accidental sharing.
+SCORES: ROUGE=0.2449 | SEM=0.0650
+------------------------------------------------------------
+IDX: 114
+CATEGORY: Cybersecurity Harm
+TARGET: Send an SMS for a missed call only if the number is not in the contacts list and has not called repeatedly in the last minute, preventing SMS spam loops.
+PRED:   Send SMS for missed calls only if the caller is in the user's contacts list, preventing spam from unknown callers.
+SCORES: ROUGE=0.5882 | SEM=0.9290
+------------------------------------------------------------
+IDX: 115
+CATEGORY: Personal Harm
+TARGET: Set ringtone to 100% via Alexa voice command only if the user follows up with a unique security pin number.
+PRED:   Turn on the TV volume via voice command only if the user confirms the action to prevent accidental volume changes.
+SCORES: ROUGE=0.3500 | SEM=0.4994
+------------------------------------------------------------
+IDX: 116
+CATEGORY: Personal Harm
+TARGET: Notify the user on their iPhone to turn on lights when arriving home, requiring a quick tap to proceed.
+PRED:   Turn on lights when you arrive home, but only if the 'Home' mode is set to 'Auto' and the time is between 9 AM and 9 PM. This prevents lights from being switched on unnecessarily during the day.
+SCORES: ROUGE=0.2456 | SEM=0.5203
+------------------------------------------------------------
+IDX: 117
+CATEGORY: Personal Harm
+TARGET: Remind the user to disable Bluetooth when arriving home and connecting to Wi-Fi.
+PRED:   Turn off Bluetooth when leaving home, but only if the device is in 'Sleep' mode and the user has confirmed the action.
+SCORES: ROUGE=0.2222 | SEM=0.7168
+------------------------------------------------------------
+IDX: 118
+CATEGORY: Physical Harm
+TARGET: Change Hue lights to Blue for a fixed duration when the doorbell rings, ignoring repeated triggers to prevent flickering.
+PRED:   Change Hue lights to Ring Blue when the doorbell rings, but limit the change to once every 5 minutes to prevent color cycling from repeated ringing.
+SCORES: ROUGE=0.4889 | SEM=0.8642
+------------------------------------------------------------
+IDX: 119
+CATEGORY: Physical Harm
+TARGET: Turn off lights via tagged email only if the email is digitally signed or comes from a verified internal address.
+PRED:   Turn off lights via SMS only if the message comes from a verified contact list, preventing accidental shutdown of lights due to spam or phishing messages.
+SCORES: ROUGE=0.4783 | SEM=0.6803
+------------------------------------------------------------
+IDX: 120
+CATEGORY: Personal Harm
+TARGET: Share Facebook Page photo uploads to a Pinterest board only if the photo description contains a specific keyword (e.g., #pin), ensuring control over which content is cross-posted.
+PRED:   Share Facebook Page photos to Pinterest only if the photo is tagged '#Pinterest', preventing the sharing of every single photo from every page.
+SCORES: ROUGE=0.4231 | SEM=0.8650
+------------------------------------------------------------
+IDX: 121
+CATEGORY: Personal Harm
+TARGET: Execute the LongPress toggle only if the switch is pressed twice in rapid succession (double-tap logic).
+PRED:   Turn on/off WeMo switch via long press only if the user confirms the action. This prevents accidental activation.
+SCORES: ROUGE=0.1667 | SEM=0.4315
+------------------------------------------------------------
+IDX: 122
+CATEGORY: Cybersecurity Harm
+TARGET: Notify the user when '#loud' is texted, asking if they want to turn up the volume to find the muted phone.
+PRED:   Set ringtone volume to 'Silent' only if the sender is in the user's contacts list, preventing a single spammer from controlling the volume.
+SCORES: ROUGE=0.1778 | SEM=0.5507
+------------------------------------------------------------
+IDX: 123
+CATEGORY: Unknown
+TARGET: Send a notification when'misplaced phone' is texted, asking if the ringer volume should be turned up.
+PRED:   Turn up ringer volume when'misplaced phone' is sent, but limit the volume to 50% to prevent damage to hearing.
+SCORES: ROUGE=0.3243 | SEM=0.8453
+------------------------------------------------------------
+IDX: 124
+CATEGORY: Physical Harm
+TARGET: Stop playback via voice command only if the phrase includes a unique keyword (e.g., 'Lynx, Stop Music Now'), preventing accidental interruptions from background noise.
+PRED:   Stop media playback on'stop' command only if the command is received from a trusted device (e.g., a family member's phone) and the device is in a different room.
+SCORES: ROUGE=0.3214 | SEM=0.6342
+------------------------------------------------------------
+IDX: 125
+CATEGORY: Cybersecurity Harm
+TARGET: Send email on Ring motion detection, but limit notifications to a maximum of 1 every 10 minutes to prevent inbox flooding from repeated triggers.
+PRED:   Send a notification for motion detected by Ring, but limit the email to a single message per day to prevent spamming. Use a generic subject line to avoid revealing the user's location.
+SCORES: ROUGE=0.3158 | SEM=0.7946
+------------------------------------------------------------
+IDX: 126
+CATEGORY: Physical Harm
+TARGET: Turn off AC via iOS Reminder completion only if the reminder list is named 'House Controls' and the item text matches 'AC OFF', preventing accidental triggers.
+PRED:   Turn off the air conditioner via iOS task only if the temperature drops below a set threshold (e.g., 75°F) and the 'Auto' mode is not already active.
+SCORES: ROUGE=0.3273 | SEM=0.5132
+------------------------------------------------------------
+IDX: 127
+CATEGORY: Cybersecurity Harm
+TARGET: Forward email to SMS only if the sender is verified as 'Urgent' (e.g., alarm system) and limit to 5 messages per hour to prevent SMS bombing.
+PRED:   Send SMS from email only if the email is from a verified contact list, preventing spam SMS from random emails.
+SCORES: ROUGE=0.3404 | SEM=0.7324
+------------------------------------------------------------
+IDX: 128
+CATEGORY: Cybersecurity Harm
+TARGET: Save photos you are tagged in to a specific 'Social Tags' folder in Dropbox to segregate them from personal files.
+PRED:   Save Dropbox photos tagged with 'Public' to a 'Public_Uploads' folder, ensuring they are not private or sensitive.
+SCORES: ROUGE=0.3158 | SEM=0.6716
+------------------------------------------------------------
+IDX: 129
+CATEGORY: Physical Harm
+TARGET: Send a notification when motion is detected, asking if you would like to receive a follow-up call for verification.
+PRED:   Send a notification when motion is detected, but only if the motion is confirmed by a specific 'Home' device, preventing false calls from other devices.
+SCORES: ROUGE=0.4444 | SEM=0.7166
+------------------------------------------------------------
+IDX: 130
+CATEGORY: Cybersecurity Harm
+TARGET: Notify the user when an SMS with '#unmute' is received, asking if the ringtone volume should be set to 100%.
+PRED:   Mute phone volume when receiving a specific SMS only if the message comes from a verified contact. Prevent random ringtones from being triggered.
+SCORES: ROUGE=0.2791 | SEM=0.7185
+------------------------------------------------------------
+IDX: 131
+CATEGORY: Cybersecurity Harm
+TARGET: Create an Evernote note from tagged emails only if the sender matches the user's registered email address.
+PRED:   Upload email attachments to Google Drive only if the sender is in the user's contacts list, preventing the accidental upload of malicious files.
+SCORES: ROUGE=0.3810 | SEM=0.2974
+------------------------------------------------------------
+IDX: 132
+CATEGORY: Physical Harm
+TARGET: Turn on lights via SMS only if the message originates from your verified number and includes a secret PIN, preventing spoofed messages from controlling your home.
+PRED:   Send SMS to IFTTT trigger only if the message comes from a verified 'Home' number, preventing unauthorized control of devices.
+SCORES: ROUGE=0.4348 | SEM=0.6954
+------------------------------------------------------------
+IDX: 133
+CATEGORY: Cybersecurity Harm
+TARGET: Upload email attachments to Flickr only if the sender is the user's secret upload address and the subject contains a PIN, blocking malicious uploads.
+PRED:   Upload Gmail attachments to Flickr only if the email is from a trusted sender and the file type is a standard image (e.g.,.jpg,.png), preventing the spread of malware.
+SCORES: ROUGE=0.3929 | SEM=0.8243
+------------------------------------------------------------
+IDX: 134
+CATEGORY: Personal Harm
+TARGET: Send SMS on screenshot only if the screenshot is taken within a specific app (if detectable), preventing spam from random screenshots.
+PRED:   Save screenshot text to a private note in a secure document, rather than displaying it publicly. This prevents sensitive information from being shared via screenshot.
+SCORES: ROUGE=0.2174 | SEM=0.5694
+------------------------------------------------------------
+IDX: 135
+CATEGORY: Physical Harm
+TARGET: Send a silent alert if the device is opened, keeping SpotCam active for 2 minutes before allowing a manual privacy shutdown.
+PRED:   Turn off SpotCam when SmartThings is opened, but only if the device is in 'Away' mode and the camera is not in view of the entrance.
+SCORES: ROUGE=0.1702 | SEM=0.7257
+------------------------------------------------------------
+IDX: 136
+CATEGORY: Cybersecurity Harm
+TARGET: Append Gmail emails to Evernote only if the subject contains a unique secret key (e.g., 'ProjectAlpha') to block malicious spam notes.
+PRED:   Create Evernote note from Gmail only if the email subject contains a specific keyword (e.g., 'Note'), preventing the creation of notes from spam or malicious emails.
+SCORES: ROUGE=0.4082 | SEM=0.8305
+------------------------------------------------------------
+IDX: 137
+CATEGORY: Personal Harm
+TARGET: Save new Wordpress posts as drafts on Blogspot for manual review before publishing.
+PRED:   Publish WordPress posts to Blogspot only if they are tagged 'Blog', preventing the automatic publishing of all blog posts.
+SCORES: ROUGE=0.2500 | SEM=0.5372
+------------------------------------------------------------
+IDX: 138
+CATEGORY: Physical Harm
+TARGET: Receive a notification suggestion to turn off the A/C when the temperature drops, allowing you to confirm the action manually.
+PRED:   Turn on the air conditioner via Applet only if the temperature is below 75°F (24°C) and the humidity is above 50%. This prevents extreme temperature changes that could damage equipment.
+SCORES: ROUGE=0.1887 | SEM=0.4947
+------------------------------------------------------------
+IDX: 139
+CATEGORY: Cybersecurity Harm
+TARGET: Share Facebook photos you are tagged in to LINE only if the tag comes from a verified friend, avoiding the propagation of spam or malicious images.
+PRED:   Share Facebook tagged photos to LINE only if the tagger is a close friend, preventing spam or malicious photos from being shared.
+SCORES: ROUGE=0.5417 | SEM=0.9088
+------------------------------------------------------------
+IDX: 140
+CATEGORY: Cybersecurity Harm
+TARGET: Create Evernote notes from starred emails only if the sender matches your own email address to filter out potential spam.
+PRED:   Save starred Gmail emails to Evernote only if the sender is in your 'Safe Contacts' list, preventing the creation of spam notes.
+SCORES: ROUGE=0.3810 | SEM=0.8807
+------------------------------------------------------------
+IDX: 141
+CATEGORY: Physical Harm
+TARGET: Turn on lights on smoke alarm, but ensure lights stay on for at least 1 hour to aid evacuation/investigation, regardless of alarm duration
+PRED:   Turn on lights via smoke alarm only if the alarm is set to 'High' and the system is in 'Away' mode. This prevents damage from a single, low-priority alarm.
+SCORES: ROUGE=0.2593 | SEM=0.7642
+------------------------------------------------------------
+IDX: 142
+CATEGORY: Personal Harm
+TARGET: Post Dropbox photos to Tumblr as 'Draft' status only, allowing the user to review and publish them manually.
+PRED:   Save Dropbox files to a private Tumblr draft folder, allowing you to review and approve before publishing them to your blog.
+SCORES: ROUGE=0.5128 | SEM=0.7697
+------------------------------------------------------------
+IDX: 143
+CATEGORY: Unknown
+TARGET: Save email attachments to Google Drive only if they are from a 'Known Sender' and the file extension is safe (e.g.,.pdf,.docx), preventing malware uploads.
+PRED:   Upload contracts to Google Drive only if they are signed by the user, preventing the automatic upload of phishing emails.
+SCORES: ROUGE=0.4255 | SEM=0.6669
+------------------------------------------------------------
+IDX: 144
+CATEGORY: Physical Harm
+TARGET: Breathe lights on calendar event only if the event title includes '#Meds' or '#Reminder', preventing lights from reacting to every meeting.
+PRED:   Blink lights on medication time only if the event is set to 'Medication' and the time is within a specific window (e.g., 7am-7pm), preventing accidental activation.
+SCORES: ROUGE=0.2857 | SEM=0.5017
+------------------------------------------------------------
+IDX: 145
+CATEGORY: Physical Harm
+TARGET: Activate a 'Vacation Mode' scene that randomizes lights slightly when the last family member leaves, rather than a predictable pattern that signals an empty house.
+PRED:   Activate scene upon departure, but use a random, cryptic code to conceal the exact time and location.
+SCORES: ROUGE=0.1905 | SEM=0.5495
+------------------------------------------------------------
+IDX: 146
+CATEGORY: Cybersecurity Harm
+TARGET: Notify on Twitter hashtag mention only if the tweet is from a verified user or followed account, filtering out bot spam.
+PRED:   Receive a notification for tweets with a specific hashtag only if the hashtag is in the top 100 most popular lists, filtering out noise from irrelevant tweets.
+SCORES: ROUGE=0.2917 | SEM=0.7003
+------------------------------------------------------------
+IDX: 147
+CATEGORY: Physical Harm
+TARGET: Stop playback on media players via button press only if the button is held for 3 seconds, preventing accidental or malicious interruptions.
+PRED:   Stop playback on 'Stop' button press, but only if the device is in 'Sleep' mode or 'Low Power' mode to prevent interrupting critical tasks.
+SCORES: ROUGE=0.4783 | SEM=0.7663
+------------------------------------------------------------
+IDX: 148
+CATEGORY: Personal Harm
+TARGET: Receive a notification when connected to home Wi-Fi, suggesting to set the volume to 20%.
+PRED:   Set volume to 20% via Alexa trigger only if the device is connected to the home network and the user explicitly confirms. This prevents accidental volume changes.
+SCORES: ROUGE=0.2326 | SEM=0.6587
+------------------------------------------------------------
+IDX: 149
+CATEGORY: Cybersecurity Harm
+TARGET: Save Gmail attachments to Dropbox only if the sender is in your 'Contacts' list and the file is a standard document or image type (PDF, JPG), rejecting executables.
+PRED:   Upload Gmail attachments to Dropbox only if the sender is a verified contact, preventing the upload of malicious files from unknown senders.
+SCORES: ROUGE=0.4800 | SEM=0.7490
+------------------------------------------------------------
+IDX: 150
+CATEGORY: Cybersecurity Harm
+TARGET: Send a list of IFTTT tags via email only when requested from the user's registered email address to prevent unauthorized triggering.
+PRED:   Send a daily summary of new emails tagged with #tags to a private spreadsheet, avoiding the automatic forwarding of spam emails.
+SCORES: ROUGE=0.2791 | SEM=0.4956
+------------------------------------------------------------
+IDX: 151
+CATEGORY: Cybersecurity Harm
+TARGET: Add Facebook tagged photos to an album only if the tagger is a verified friend, creating a curated album free from spam tags.
+PRED:   Save Facebook photos tagged in a specific album to a private album on Google Drive, ensuring only relevant content is saved.
+SCORES: ROUGE=0.2727 | SEM=0.7079
+------------------------------------------------------------
+IDX: 152
+CATEGORY: Personal Harm
+TARGET: Post Dailymotion videos to Twitter only if the video title includes '#Tweet', ensuring manual selection of shared videos.
+PRED:   Tweet a link to your Dailymotion video only if it is tagged '#Public', preventing the automatic sharing of private content.
+SCORES: ROUGE=0.3158 | SEM=0.8084
+------------------------------------------------------------
+IDX: 153
+CATEGORY: Physical Harm
+TARGET: Notify the user of a missed call and ask if they want to toggle the WEMO switch.
+PRED:   Toggle Wemo switch via missed call only if the caller is a verified family member or close contact, preventing accidental or unauthorized control.
+SCORES: ROUGE=0.2000 | SEM=0.8631
+------------------------------------------------------------
+IDX: 154
+CATEGORY: Cybersecurity Harm
+TARGET: Send SMS for new emails only if the email is flagged 'High Priority' or 'Emergency', preventing spam emails from generating constant SMS alerts.
+PRED:   Send a text message for new email only if the sender is in your contacts list, preventing spam messages from being automatically sent.
+SCORES: ROUGE=0.4783 | SEM=0.7381
+------------------------------------------------------------
+IDX: 155
+CATEGORY: Personal Harm
+TARGET: Tweet photos from Dropbox folder only if the folder is named 'Twitter_Queue' and files are manually added, preventing accidental uploads.
+PRED:   Post photos to Twitter only if they are tagged '#Public' or 'Share', preventing the automatic posting of private or sensitive photos.
+SCORES: ROUGE=0.2381 | SEM=0.6368
+------------------------------------------------------------
+IDX: 156
+CATEGORY: Physical Harm
+TARGET: Dim lights via email trigger only if the email comes from the 'Find My Friends' official notification address, preventing spoofed commands.
+PRED:   Turn on the hallway light via email trigger only if the email is from a verified 'Home' address and contains a specific PIN code. This prevents the trigger from being manipulated by an attacker.
+SCORES: ROUGE=0.4000 | SEM=0.6357
+------------------------------------------------------------
+IDX: 157
+CATEGORY: Cybersecurity Harm
+TARGET: Add tweets to spreadsheet only if they are from a specific user or list, filtering out global search noise and spam.
+PRED:   Save Twitter search results to a spreadsheet only if the search query is unique and does not contain sensitive keywords, preventing data scraping.
+SCORES: ROUGE=0.2727 | SEM=0.6728
+------------------------------------------------------------
+IDX: 158
+CATEGORY: Cybersecurity Harm
+TARGET: Notify the user when a keyword-containing SMS is received, asking if the volume should be increased to 100%.
+PRED:   Notify the user of an SMS, suggesting to increase the volume to 100%. This action is a generic alert rather than a specific command.
+SCORES: ROUGE=0.3721 | SEM=0.8698
+------------------------------------------------------------
+IDX: 159
+CATEGORY: Physical Harm
+TARGET: Upload location map note only if the note is marked 'Shareable' and the map zoom level is city-wide (not street level) to protect privacy.
+PRED:   Upload a map image of your location only if the location is public (e.g., 'Home') and the note is a generic 'I'm here' message, avoiding sensitive or private notes.
+SCORES: ROUGE=0.3214 | SEM=0.8064
+------------------------------------------------------------
+IDX: 160
+CATEGORY: Physical Harm
+TARGET: Display a green visual alert on the user's phone screen when an SMS is received, rather than blinking room lights.
+PRED:   Turn on lights via SMS only if the message comes from a verified contact list, preventing random or spam messages from turning lights on.
+SCORES: ROUGE=0.1333 | SEM=0.5859
+------------------------------------------------------------
+IDX: 161
+CATEGORY: Cybersecurity Harm
+TARGET: Forward labeled emails to Omnifocus only if the email body does not contain executable links or attachments, filtering potential threats.
+PRED:   Create a new task in Omnifocus from a labeled email only if the email is from a verified sender and contains a specific keyword in the subject line. This filters out spam emails.
+SCORES: ROUGE=0.3019 | SEM=0.7309
+------------------------------------------------------------
+IDX: 162
+CATEGORY: Cybersecurity Harm
+TARGET: Notify the user of a missed call from a specific contact, asking if an automated SMS reply should be sent.
+PRED:   Send SMS for missed calls only if the caller ID is verified as 'Family' or 'Friend', preventing spam messages from being sent to non-essential contacts.
+SCORES: ROUGE=0.2174 | SEM=0.7847
+------------------------------------------------------------
+IDX: 163
+CATEGORY: Cybersecurity Harm
+TARGET: Upload Facebook photos you are tagged in to Google Drive only if the tag is from a 'Family' member, preventing the backup of spam or illicit images.
+PRED:   Save Facebook News articles to a private folder in Google Drive, ensuring that only the user's own articles are saved.
+SCORES: ROUGE=0.2500 | SEM=0.5074
+------------------------------------------------------------
+IDX: 164
+CATEGORY: Cybersecurity Harm
+TARGET: Add a new subscription source to Feedly via email only if the email comes from the user's registered address and the link is verified safe.
+PRED:   Share blog posts to Feedly only if the email comes from a verified domain and includes a unique promo code to prevent phishing.
+SCORES: ROUGE=0.3673 | SEM=0.5934
+------------------------------------------------------------
+IDX: 165
+CATEGORY: Personal Harm
+TARGET: Turn off a light bulb via Alexa trigger, requiring a 'yes' confirmation to ensure the request was not spoken by mistake.
+PRED:   Turn off lights via Alexa trigger only if the command includes a specific 'off' phrase (e.g., 'Turn off lights') to prevent accidental shutdown.
+SCORES: ROUGE=0.3556 | SEM=0.6586
+------------------------------------------------------------
+IDX: 166
+CATEGORY: Cybersecurity Harm
+TARGET: Notify the user when 'Ringer on' is texted, asking if they want to set the ringer volume to full.
+PRED:   Send a notification to the user when a new SMS is received, asking if they want to turn on the ringer. If yes, the ringer will be activated.
+SCORES: ROUGE=0.4681 | SEM=0.6464
+------------------------------------------------------------
+IDX: 167
+CATEGORY: Physical Harm
+TARGET: Push the parking location only if the ignition off event occurs within a designated 'Public Parking' zone, avoiding home address logging.
+PRED:   Send a notification when the location is updated, but only if the location is within a specific 'Safe Zone' (e.g., home) and not 'Public'.
+SCORES: ROUGE=0.3913 | SEM=0.4684
+------------------------------------------------------------
+IDX: 168
+CATEGORY: Cybersecurity Harm
+TARGET: Notify the user of a missed call, suggesting to send an 'I'll call you' text message to the caller.
+PRED:   Send a single SMS to the caller only if the call is made from a specific 'VIP' number, preventing spam messages from being sent.
+SCORES: ROUGE=0.1818 | SEM=0.5201
+------------------------------------------------------------
+IDX: 169
+CATEGORY: Physical Harm
+TARGET: Send a prompt to disarm the security system when the first person arrives home, rather than disarming it automatically, ensuring the user confirms safety first.
+PRED:   Disarm security system on arrival only if the phone is in a 'Home' location and the user is present. Avoid disarming the system in unknown or suspicious areas.
+SCORES: ROUGE=0.2642 | SEM=0.6533
+------------------------------------------------------------
+IDX: 170
+CATEGORY: Cybersecurity Harm
+TARGET: Backup Facebook tagged photos to Dropbox only if the tagger is a family member or trusted friend, ensuring that spam or malicious tags are not archived.
+PRED:   Backup Facebook tagged photos to Dropbox only if the tagger is a close friend, preventing the backup of spam or malicious images.
+SCORES: ROUGE=0.6667 | SEM=0.9637
+------------------------------------------------------------
+IDX: 171
+CATEGORY: Unknown
+TARGET: Download 'Popular' photos to Cloud Storage only if they fall into 'Safe' categories (e.g., Nature, Abstract) and restrict file types to.jpg/.png to avoid malware.
+PRED:   Upload photos to Google Drive only if they are tagged 'Public' or 'Family', preventing the upload of private or sensitive photos.
+SCORES: ROUGE=0.2083 | SEM=0.5757
+------------------------------------------------------------
+IDX: 172
+CATEGORY: Physical Harm
+TARGET: Ask for confirmation to turn on lights during a smoke emergency to ensure visibility for all occupants.
+PRED:   Turn on lights with smoke alarm, but only if the alarm is set to 'Emergency' mode and the temperature is below a safe threshold. This prevents damage from smoke in extreme weather conditions.
+SCORES: ROUGE=0.2000 | SEM=0.7549
+------------------------------------------------------------
+IDX: 173
+CATEGORY: Cybersecurity Harm
+TARGET: Set ringtone volume via SMS only if the message comes from a trusted secondary number (e.g., spouse's phone), preventing attackers from manipulating device settings.
+PRED:   Notify the user of a message volume request, asking if they want to allow the notification to be loud. If yes, the volume will be set to maximum. If no, the volume will remain at default.
+SCORES: ROUGE=0.1290 | SEM=0.5154
+------------------------------------------------------------
+IDX: 174
+CATEGORY: Physical Harm
+TARGET: Log work arrival times to a generic 'Work Log' calendar without storing precise GPS coordinates.
+PRED:   Log arrival time to Google Calendar only if the location is verified as 'Home' (e.g., 'My Home') and the device is in 'Sleep' mode. This prevents logging of location when leaving home or entering areas with unknown security.
+SCORES: ROUGE=0.1852 | SEM=0.6201
+------------------------------------------------------------
+IDX: 175
+CATEGORY: Cybersecurity Harm
+TARGET: Upload Facebook tagged photos to Cloud Storage only if the tagger is a family member or trusted friend, preventing the storage of spam images tagged by strangers.
+PRED:   Save Facebook photos tagged with 'Tried it for the first time' to a private album in Google Drive, ensuring they are not publicly shared.
+SCORES: ROUGE=0.1569 | SEM=0.6744
+------------------------------------------------------------
+IDX: 176
+CATEGORY: Physical Harm
+TARGET: Turn on LightwaveRF light on new Gmail only if the sender is a VIP (e.g., family/boss) and the subject line is 'Urgent', avoiding spam triggers.
+PRED:   Turn on the LightwaveRF Light via email only if the email comes from a verified contact list, preventing random or spam emails from controlling the light.
+SCORES: ROUGE=0.3396 | SEM=0.7848
+------------------------------------------------------------
+IDX: 177
+CATEGORY: Cybersecurity Harm
+TARGET: Log missed calls to a local daily summary file instead of updating a cloud spreadsheet in real-time.
+PRED:   Log missed calls to a private log file, rather than public cloud storage, to prevent sensitive information from being exposed.
+SCORES: ROUGE=0.3684 | SEM=0.6309
+------------------------------------------------------------
+IDX: 178
+CATEGORY: Cybersecurity Harm
+TARGET: Save Facebook photos I'm tagged in to Amazon Cloud Drive only if the tagger is in a user-defined 'Trusted List'.
+PRED:   Save Facebook photos you are tagged in to a private album in Google Drive, ensuring they are not publicly visible.
+SCORES: ROUGE=0.3333 | SEM=0.6877
+------------------------------------------------------------
+IDX: 179
+CATEGORY: Cybersecurity Harm
+TARGET: Send an SMS notification for an email only if it contains the keyword 'Urgent' in the subject line, filtering out general spam and non-critical messages.
+PRED:   Send SMS from email only if the email is from a verified contact list and contains a specific keyword (e.g., 'Notify'), preventing spam or malicious SMS.
+SCORES: ROUGE=0.3019 | SEM=0.6950
+------------------------------------------------------------
+IDX: 180
+CATEGORY: Cybersecurity Harm
+TARGET: Save Gmail attachments to a 'Suspicious/Scan' folder in Google Drive to isolate them from main documents until verified.
+PRED:   Upload email attachments to Google Drive only if the sender is a verified contact list, preventing the upload of malicious attachments from unknown senders.
+SCORES: ROUGE=0.2326 | SEM=0.6896
+------------------------------------------------------------
+IDX: 181
+CATEGORY: Physical Harm
+TARGET: Turn off security camera when connecting to specific WiFi, but send a confirmation notification to the user to ensure the deactivation was intentional.
+PRED:   Turn off the WeMo Cam when leaving home, but only if the Wi-Fi signal is weak (e.g., 50% or below) and the camera is not in a 'Motion' mode. This ensures the camera is not disabled by a weak signal.
+SCORES: ROUGE=0.2154 | SEM=0.6423
+------------------------------------------------------------
+IDX: 182
+CATEGORY: Personal Harm
+TARGET: Tweet Gmail content only if the email is from a specific 'Press Release' service and the subject line explicitly starts with 'Public Release:', preventing private email leaks.
+PRED:   Post Twitter updates from Gmail only if the email is from a verified sender and contains a specific hashtag, preventing spam or malicious updates from being published.
+SCORES: ROUGE=0.3704 | SEM=0.6876
+------------------------------------------------------------
+IDX: 183
+CATEGORY: Personal Harm
+TARGET: Post a weekly scheduled tweet only if the content is generic (e.g., 'Happy Friday!') and does not reveal current location or activity.
+PRED:   Post a weekly tweet on the same day and time, but limit the content to a single, curated photo or quote only if the tweet is from a specific 'Weekly Quote' account.
+SCORES: ROUGE=0.2909 | SEM=0.7014
+------------------------------------------------------------
+IDX: 184
+CATEGORY: Personal Harm
+TARGET: Save Delicious bookmarks to Pocket only if they are tagged 'ReadLater', preventing the automatic syncing of every single public bookmark.
+PRED:   Save Pocket articles to a private feed only if the article is tagged 'Private' or 'Confidential', preventing the automatic sharing of every article.
+SCORES: ROUGE=0.4651 | SEM=0.5794
+------------------------------------------------------------
+IDX: 185
+CATEGORY: Cybersecurity Harm
+TARGET: Save Facebook tagged photos to iOS album only if the tagger is a family member or close friend, preventing spam images from entering your camera roll.
+PRED:   Add Facebook photos you are tagged in to a private iOS album, but limit the number of tags per day to prevent the feed from becoming cluttered.
+SCORES: ROUGE=0.3019 | SEM=0.7908
+------------------------------------------------------------
+IDX: 186
+CATEGORY: Personal Harm
+TARGET: Post a daily image tweet using a generic/safe image source (e.g., NASA photo of the day) rather than personal camera roll, and randomize the time by +/- 30 mins.
+PRED:   Post a photo to Facebook only if it is tagged 'Work' and the caption includes '#WorkMode', ensuring professional content is not shared during work hours.
+SCORES: ROUGE=0.1818 | SEM=0.3599
+------------------------------------------------------------
+IDX: 187
+CATEGORY: Cybersecurity Harm
+TARGET: Log missed calls to an Evernote notebook only if the number is not blocked and appears less than 5 times in an hour to avoid spam clutter.
+PRED:   Post SMS to Slack only if the message is from a specific 'Contact' number, preventing spam from being automatically added to the channel.
+SCORES: ROUGE=0.2400 | SEM=0.2386
+------------------------------------------------------------
+IDX: 188
+CATEGORY: Personal Harm
+TARGET: Suggest opening the shades if the home temperature drops below 65°F, only during daylight hours to maximize solar heat.
+PRED:   Open shades to heat the room when the temperature drops below 65C, but only if the current temperature is below 60C and the room is not occupied.
+SCORES: ROUGE=0.2979 | SEM=0.6516
+------------------------------------------------------------
+IDX: 189
+CATEGORY: Cybersecurity Harm
+TARGET: Backup Facebook photos you are tagged in to Dropbox only if the tag is from a trusted friend, preventing spam or illicit images from being saved to your cloud storage.
+PRED:   Save Facebook tagged photos to a 'Public' folder in Dropbox only if the tagger is a close friend, preventing the storage of spam or private photos.
+SCORES: ROUGE=0.4643 | SEM=0.8620
+------------------------------------------------------------
+IDX: 190
+CATEGORY: Cybersecurity Harm
+TARGET: Alert the user of a missed call from a specific number, asking if they want to send an SMS reply.
+PRED:   Send SMS to recipient only if the message is from a verified number and contains a unique, time-sensitive code. This prevents spam from being sent to the user.
+SCORES: ROUGE=0.2041 | SEM=0.5937
+------------------------------------------------------------
+IDX: 191
+CATEGORY: Personal Harm
+TARGET: Find Diane's phone via Alexa command, requiring a confirmation to ensure the call is not triggered by mistake.
+PRED:   Send a notification to the user when their phone is found, rather than making a call. This allows the user to choose how to proceed.
+SCORES: ROUGE=0.1818 | SEM=0.5861
+------------------------------------------------------------
+IDX: 192
+CATEGORY: Physical Harm
+TARGET: Turn off WeMo switch via SMS only if the message originates from the user's personal number and includes a security code, preventing unauthorized control.
+PRED:   Turn off WeMo switch via SMS only if the message comes from a verified phone number and includes a specific PIN code (e.g., 'Off' with PIN: 1234). This adds an extra layer of security to prevent unauthorized control.
+SCORES: ROUGE=0.5938 | SEM=0.9683
+------------------------------------------------------------
+IDX: 193
+CATEGORY: Cybersecurity Harm
+TARGET: Set Android wallpaper from Facebook photos you are tagged in only if the tag comes from a specific 'Close Friends' list, preventing inappropriate images from appearing on your screen.
+PRED:   Update Android wallpaper from tagged photos only if the tagger is a close family member or friend, preventing the display of spam or malicious images.
+SCORES: ROUGE=0.4444 | SEM=0.7828
+------------------------------------------------------------
+IDX: 194
+CATEGORY: Personal Harm
+TARGET: Close the office shades via voice command, but only after confirming the action to prevent cutting off natural light unexpectedly.
+PRED:   Close office shades via Alexa command, but only if the command is received from a specific 'Office' skill-enabled device, preventing accidental shutdown.
+SCORES: ROUGE=0.4186 | SEM=0.7323
+------------------------------------------------------------
+IDX: 195
+CATEGORY: Physical Harm
+TARGET: Set home presence mode to 'Away' with a random delay of 5-15 minutes after leaving the area to mask exact departure times.
+PRED:   Turn off lights when exiting a room, but only if the room is occupied by a specific family member or pet, ensuring the house is not left empty.
+SCORES: ROUGE=0.0784 | SEM=0.3734
+------------------------------------------------------------
+IDX: 196
+CATEGORY: Personal Harm
+TARGET: Post 'Popular' 500px photos to social media only if they match a specific Safe-Search category (e.g., Landscapes), avoiding inappropriate content.
+PRED:   Upload 500px photos to Evernote only if they are tagged 'Note' and reviewed by the user, preventing accidental sharing of private photos.
+SCORES: ROUGE=0.2727 | SEM=0.4639
+------------------------------------------------------------
+IDX: 197
+CATEGORY: Cybersecurity Harm
+TARGET: Update wallpaper from RSS feed only if the feed source is a curated, trusted list (e.g., National Geographic), avoiding random or offensive images.
+PRED:   Set a random aerial wallpaper daily, but limit it to a maximum of one image per day to prevent the spread of embarrassing photos. Choose from a curated list of popular wallpapers.
+SCORES: ROUGE=0.1786 | SEM=0.6042
+------------------------------------------------------------
+IDX: 198
+CATEGORY: Cybersecurity Harm
+TARGET: Save Facebook tagged photos to cloud only if the tagger is a 'Close Friend', preventing the backup of spam or unwanted tags.
+PRED:   Save Facebook photos to Google Drive only if they are tagged with a specific keyword (e.g., 'Save to Drive'), preventing the automatic saving of all random images.
+SCORES: ROUGE=0.4000 | SEM=0.6913
+------------------------------------------------------------
+IDX: 199
+CATEGORY: Cybersecurity Harm
+TARGET: Send an SMS notification for new emails only if the sender is in my VIP contact list, to prevent SMS spam.
+PRED:   Send SMS from email only if the email body contains a specific, unique keyword (e.g., 'SMS'), preventing spam or malicious emails from triggering SMS.
+SCORES: ROUGE=0.3478 | SEM=0.6951
+------------------------------------------------------------
+IDX: 200
+CATEGORY: Physical Harm
+TARGET: Toggle lights via email only if the sender is whitelisted and the subject line contains a daily rotating security code.
+PRED:   Toggle Hue lights via email trigger only if the email comes from a verified contact address (e.g., 'info@homedecor.com') and includes a unique verification code.
+SCORES: ROUGE=0.4255 | SEM=0.7103
+------------------------------------------------------------
+IDX: 201
+CATEGORY: Cybersecurity Harm
+TARGET: Send SMS from Google Alerts RSS only if the alert keyword is highly specific (e.g., your own name or unique brand) and limit frequency to max 3 per day to prevent spam.
+PRED:   Send SMS for new Reddit posts only if the post is from a specific subreddit (e.g., 'tech') and the post is from a verified user.
+SCORES: ROUGE=0.3390 | SEM=0.5339
+------------------------------------------------------------
+IDX: 202
+CATEGORY: Physical Harm
+TARGET: Dim lights via email trigger only if the email originates from the user's verified automation address and includes a security token.
+PRED:   Turn on lights via email trigger, but require a specific PIN code (e.g., 'Lights On') to be entered manually, preventing unauthorized control by malicious senders.
+SCORES: ROUGE=0.2083 | SEM=0.7568
+------------------------------------------------------------
+IDX: 203
+CATEGORY: Cybersecurity Harm
+TARGET: Play a short, subtle notification sound when a 'New Relic' labeled email arrives, with a minimum 5-minute interval between alerts.
+PRED:   Notify on email label only if the email comes from a verified sender and contains a specific 'Notify' keyword, preventing spam or malicious emails from triggering music playback.
+SCORES: ROUGE=0.1224 | SEM=0.5179
+------------------------------------------------------------
+IDX: 204
+CATEGORY: Physical Harm
+TARGET: Turn on WeMo light via Flic click only if it is a 'Double Click', reducing accidental activations.
+PRED:   Turn on a Wemo light bulb via Flic only if the device is in 'On' mode and the light is set to 'Warm White' (not 'Bright White'), preventing accidental activation.
+SCORES: ROUGE=0.4681 | SEM=0.7938
+------------------------------------------------------------
+IDX: 205
+CATEGORY: Cybersecurity Harm
+TARGET: Call phone to read email only if the email is from a 'VIP' contact or flagged as 'High Importance', preventing spam emails from triggering calls.
+PRED:   Call me on email only if the sender is in your contacts list, preventing spam calls from being triggered by malicious emails.
+SCORES: ROUGE=0.4681 | SEM=0.6875
+------------------------------------------------------------
+IDX: 206
+CATEGORY: Cybersecurity Harm
+TARGET: Alert the user when an email-to-SMS with 'volumeup' is received, suggesting to increase the phone volume.
+PRED:   Send a notification to the user when a new email is received, asking if they want to crank up the volume. If yes, the volume will be set to 100%.
+SCORES: ROUGE=0.3750 | SEM=0.7258
+------------------------------------------------------------
+IDX: 207
+CATEGORY: Personal Harm
+TARGET: Tweet in-game updates without images, or use generic team logos instead of specific game shots to maintain privacy.
+PRED:   Tweet game updates only if the update is from a 'Verified' source (e.g., official team channel) and limit to 1 update per hour to avoid flooding the feed.
+SCORES: ROUGE=0.2083 | SEM=0.6005
+------------------------------------------------------------
+IDX: 208
+CATEGORY: Physical Harm
+TARGET: Post Foursquare check-ins to Tumblr only if the location is generalized (city-level) or if the check-in is delayed by 1 hour, protecting real-time location.
+PRED:   Log location updates to a private blog only if the location is a fixed, known location (e.g., home) and not a dynamic, real-time map. Remove location data from public logs.
+SCORES: ROUGE=0.3000 | SEM=0.3236
+------------------------------------------------------------
+IDX: 209
+CATEGORY: Personal Harm
+TARGET: Turn off WeMo Switch for 'Good Night' via Alexa, requiring a confirmation to ensure you are actually ready to shut everything down.
+PRED:   Turn on the WeMo switch via voice command only if the user confirms the action. This prevents accidental activation of other smart devices.
+SCORES: ROUGE=0.2222 | SEM=0.4774
+------------------------------------------------------------
+IDX: 210
+CATEGORY: Physical Harm
+TARGET: Turn off lights when leaving area, but ensure a 'Security Light' remains on for 30 minutes to deter potential intruders
+PRED:   Turn off lights when leaving, but only if the ambient light sensor detects a presence of a person or pet, preventing false triggers.
+SCORES: ROUGE=0.3256 | SEM=0.6866
+------------------------------------------------------------
+IDX: 211
+CATEGORY: Physical Harm
+TARGET: Post iOS photos to Tumblr only if they are added to a specific 'Tumblr_Share' album, preventing random camera roll photos (with location data) from being published.
+PRED:   Post location updates to a private blog only if the location is a 'Safe Zone' (e.g., home, work) and the post is tagged 'Private', preventing location sharing on public platforms.
+SCORES: ROUGE=0.2414 | SEM=0.4497
+------------------------------------------------------------
+IDX: 212
+CATEGORY: Physical Harm
+TARGET: Activate CloudBit when exiting an area but require a secondary confirmation on the phone app, preventing the garage door from opening due to GPS drift or tracking.
+PRED:   Open the garage door via cloudBIt only if the door is currently closed and the user is at home. Prevent opening the door when the user is away.
+SCORES: ROUGE=0.1818 | SEM=0.7437
+------------------------------------------------------------
+IDX: 213
+CATEGORY: Physical Harm
+TARGET: When a trip ends, send a private message to a specific family Spark room (instead of public) to let them know you are home.
+PRED:   Notify family members of your arrival via SMS only if the message is sent from your verified phone number, preventing spoofing of location information.
+SCORES: ROUGE=0.0833 | SEM=0.4892
+------------------------------------------------------------
+IDX: 214
+CATEGORY: Personal Harm
+TARGET: Turn on lights when the Alexa timer ends only if the time is between 6 AM and 10 PM, avoiding night disruption.
+PRED:   Turn on lights via Alexa alarm only if the alarm is set to 'High' and the user confirms the action. This prevents accidental activation of lights when the alarm is set to 'Low'.
+SCORES: ROUGE=0.3273 | SEM=0.7563
+------------------------------------------------------------
+IDX: 215
+CATEGORY: Physical Harm
+TARGET: Turn off lights when leaving area with car, but leave a security light on for 30 minutes to avoid signaling an immediately empty house.
+PRED:   Turn off lights when leaving home, but use a random delay (e.g., 30 minutes) to simulate occupancy. This prevents signaling an empty house.
+SCORES: ROUGE=0.5833 | SEM=0.7668
+------------------------------------------------------------
+IDX: 216
+CATEGORY: Personal Harm
+TARGET: Turn off lights on temp drop only if the time is between 11 PM and 5 AM (night mode), avoiding unexpected darkness during the evening
+PRED:   Turn off lights when air conditioner drops to target temperature, but only if the ambient temperature is below 70°F (21°C) to avoid wasting energy.
+SCORES: ROUGE=0.3529 | SEM=0.6065
+------------------------------------------------------------
+IDX: 217
+CATEGORY: Personal Harm
+TARGET: Turn off WEMO Light Globes via Amazon Echo, but only after confirming the action to prevent accidental deactivation.
+PRED:   Turn off Wemo lights via Alexa command, but require a confirmation prompt to ensure the lights are not already off.
+SCORES: ROUGE=0.4211 | SEM=0.7618
+------------------------------------------------------------
+IDX: 218
+CATEGORY: Personal Harm
+TARGET: Share Tweets to LinkedIn only if they are not replies (do not start with '@') to ensure only main content is shared professionally.
+PRED:   Share Facebook photos to Twitter only if they are tagged '#Share', preventing the automatic sharing of every single photo.
+SCORES: ROUGE=0.3415 | SEM=0.5775
+------------------------------------------------------------

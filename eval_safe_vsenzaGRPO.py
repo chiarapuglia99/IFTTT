@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 # --- CONFIGURAZIONE ---
 BASE_MODEL_ID = "meta-llama/Llama-3.2-1B-Instruct"
-ADAPTER_PATH = "./output_llama_standard/final_adapter" 
+ADAPTER_PATH = "./output_llama_standard_vsenzaGRPO/final_adapter" 
 DATASET_PATH = "dataset_final_processed"
 CSV_PATH = "dataset.csv" 
 
@@ -107,15 +107,23 @@ for i in tqdm(range(len(test_data))):
     
     # Recupero info extra dal CSV (euristico) per il report
     cat_str = "Unknown"
+    trigger_str = "N/A"
+    action_str = "N/A"
+    
     if df_ref is not None:
         # Cerchiamo nel CSV la riga che ha ESATTAMENTE questa safe rule target
         match = df_ref[df_ref['safe'].str.strip() == ground_truth]
         if not match.empty:
             cat_str = risk_map.get(match.iloc[0]['label'], "Unknown")
+            # Aggiunta estrazione trigger e action dal dataset
+            trigger_str = match.iloc[0]['triggerTitle']
+            action_str = match.iloc[0]['actionTitle']
             
-    # Salvataggio log
+    # Salvataggio log con trigger e action inclusi
     results.append(
         f"IDX: {i}\n"
+        f"TRIGGER: {trigger_str}\n"
+        f"ACTION:  {action_str}\n"
         f"CATEGORY: {cat_str}\n"
         f"TARGET: {ground_truth}\n"
         f"PRED:   {prediction}\n"

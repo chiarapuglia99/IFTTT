@@ -1,0 +1,78 @@
+=== REPORT AVANZATO SAFE RULE (ROUGE + SEMANTIC) ===
+Modello: ./model_qwen_safe_final
+Campioni testati: 219
+
+METRICHE DI SIMILARITÀ (Quanto imita l'esperto?):
+1. ROUGE-L Score:      0.2322  (0=Diverso, 1=Identico parola per parola)
+2. Semantic Similarity: 0.6354 (0=Diverso, 1=Stesso significato)
+   -> Nota: Se Semantic > ROUGE, il modello usa parole diverse ma corrette.
+
+METRICHE EURISTICHE (Qualità tecnica):
+3. Aderenza XML:       100.0%
+4. Uso Verbi Mitigazione: 91.3%
+
+ESEMPI DETTAGLIATI:
+------------------------------------------------------------
+TARGET (Esperto): Send email on doorbell trigger, but limit notifications to max 1 per 10 minutes to prevent inbox flooding from repeated presses.
+GENERATA (AI):    Send an email on incoming email but disable sending on doorbell turn-on events to avoid spam.
+METRICHE -> ROUGE-L: 0.26 | SEMANTICA: 0.73
+------------------------------------------------------------
+TARGET (Esperto): Call phone on Roost alarm trigger, but limit calls to one every 10 minutes to ensure you are alerted without rendering the phone unusable due to constant ringing.
+GENERATA (AI):    Call your phone when Roost detects an alarm; otherwise, alert through other channels to avoid spam calls.
+METRICHE -> ROUGE-L: 0.22 | SEMANTICA: 0.73
+------------------------------------------------------------
+TARGET (Esperto): Send a notification to the user when a call is missed, ensuring no important calls are overlooked.
+GENERATA (AI):    Send an SMS on missed calls but disable auto-replies to avoid SMS spamming.
+METRICHE -> ROUGE-L: 0.19 | SEMANTICA: 0.70
+------------------------------------------------------------
+TARGET (Esperto): Create a Todoist task from a Facebook Page link only if the link domain is trusted and not on a blocklist.
+GENERATA (AI):    Create a Todoist task in Personal folder only when a new link is posted on Facebook Page, otherwise ignore.
+METRICHE -> ROUGE-L: 0.40 | SEMANTICA: 0.75
+------------------------------------------------------------
+TARGET (Esperto): Upload new screenshots to a private cloud folder for review instead of posting them directly to Twitter.
+GENERATA (AI):    Post new screenshots to Twitter but set visibility to 'Only Me' or 'Direct Message' to prevent public exposure.
+METRICHE -> ROUGE-L: 0.23 | SEMANTICA: 0.70
+------------------------------------------------------------
+TARGET (Esperto): Trigger a high-priority prompt to turn off the heater when leaving home to ensure the house remains safe.
+GENERATA (AI):    Turn off the heater when exiting an area but set a reminder to check settings, to avoid accidental shutdown.
+METRICHE -> ROUGE-L: 0.32 | SEMANTICA: 0.73
+------------------------------------------------------------
+TARGET (Esperto): When the command to turn off AV is heard, ask for confirmation before shutting down the equipment.
+GENERATA (AI):    Start activity (turn off av equipment) only if spoken when going to bed or leaving, using a defined phrase to avoid unintended activation.
+METRICHE -> ROUGE-L: 0.20 | SEMANTICA: 0.66
+------------------------------------------------------------
+TARGET (Esperto): Post a link to a Facebook Page only when a new email is received from a verified internal company address matching a specific project topic.
+GENERATA (AI):    Generate a link post from new emails in inbox but set a keyword filter to avoid publishing spam content.
+METRICHE -> ROUGE-L: 0.18 | SEMANTICA: 0.48
+⚠️ SIGNIFICATO DIVERGENTE
+------------------------------------------------------------
+TARGET (Esperto): Post email content to Slack only if the email sender is verified as an internal team member and the subject line contains a specific project code.
+GENERATA (AI):    Send tagged emails to channel but disable auto-post to channel unless explicitly configured via web interface.
+METRICHE -> ROUGE-L: 0.09 | SEMANTICA: 0.39
+⚠️ SIGNIFICATO DIVERGENTE
+------------------------------------------------------------
+TARGET (Esperto): Make an honest ETA device with littleBits that tracks proximity, ensuring data is encrypted and the display is private to prevent attackers from learning your habits.
+GENERATA (AI):    Set output level when exiting area to notify housemate via text message only; disable automatic display on cloud.
+METRICHE -> ROUGE-L: 0.05 | SEMANTICA: 0.34
+⚠️ SIGNIFICATO DIVERGENTE
+------------------------------------------------------------
+TARGET (Esperto): Share location to LinkedIn via button press only if the location is generalized to the city level, preventing the broadcast of precise coordinates to strangers.
+GENERATA (AI):    Share an update on LinkedIn but set the location to 'None' unless attending a conference; disable auto-update feature otherwise.
+METRICHE -> ROUGE-L: 0.22 | SEMANTICA: 0.70
+------------------------------------------------------------
+TARGET (Esperto): Create a post from email content only if the email originates from a trusted editorial address to prevent posting malicious spam.
+GENERATA (AI):    Post new emails to News Feed but set default visibility to 'Only Me' or 'Friends' to prevent public exposure.
+METRICHE -> ROUGE-L: 0.20 | SEMANTICA: 0.56
+------------------------------------------------------------
+TARGET (Esperto): Post location map to Blogger via button press, but generalize the location to the 'City' level rather than exact GPS coordinates to protect privacy.
+GENERATA (AI):    Post your location to your Blogger blog but disable the embedded map image to prevent location tracking.
+METRICHE -> ROUGE-L: 0.34 | SEMANTICA: 0.77
+------------------------------------------------------------
+TARGET (Esperto): Turn on A/C via email only if the sender is the user's verified address and the subject contains a secret PIN code.
+GENERATA (AI):    Send an email to IFTTT to turn A/C on but disable automatic execution; use Sensibo app for manual control.
+METRICHE -> ROUGE-L: 0.14 | SEMANTICA: 0.44
+⚠️ SIGNIFICATO DIVERGENTE
+------------------------------------------------------------
+TARGET (Esperto): Notify the user of a new voicemail, asking if they want to change the Hue light color to blue for visual awareness.
+GENERATA (AI):    Change Philips Hue lights to Ooma blue only when a new voicemail is received; otherwise, revert to default color.
+METRICHE -> ROUGE-L: 0.24 | SEMANTICA: 0.74

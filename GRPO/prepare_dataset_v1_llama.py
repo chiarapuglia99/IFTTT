@@ -3,7 +3,7 @@ from datasets import Dataset, DatasetDict, Features, Value
 import os
 from tqdm import tqdm
 
-def prepare_data_for_llama_grpo(csv_path, output_dir="dataset_llama4"):
+def prepare_data_for_llama_grpo(csv_path, output_dir="dataset_llama"):
     if not os.path.exists(csv_path):
         print(f"Error: {csv_path} not found.")
         return

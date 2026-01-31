@@ -1,6 +1,6 @@
 # Ignore dataset files
-*.csv
 # Add other common ignores
+dataset.csv
 *.log
 *.tmp
 .DS_Store
@@ -20,7 +20,20 @@ old/
 dataset_llama/
 dataset_final_processed
 
-llama-3.2-1B_v1/model_final_llama
-llama-3.2-1B_v1/output_llama_final
+GRPO/llama-3.2-1B_v1/model_final_llama
+GRPO/llama-3.2-1B_v1/output_llama_final
 
 output_llama_standard_vsenzaGRPO
+
+model_qwen_*/
+qwen_*_results/
+qwen_sft_*/
+dataset_qwen_*/
+*.lock
+
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+adapter_model.bin

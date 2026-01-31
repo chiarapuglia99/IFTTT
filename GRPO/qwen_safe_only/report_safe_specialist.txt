@@ -1,0 +1,61 @@
+=== REPORT VALUTAZIONE SAFE RULE SPECIALIST ===
+Modello: ./model_qwen_safe_final
+Campioni testati: 219
+
+METRICHE QUANTITATIVE:
+1. Aderenza Formato XML:  219/219 (100.0%)
+2. Pertinenza Contesto:   219/219 (100.0%) -> La regola parla degli oggetti giusti?
+3. Mitigazione Attiva:    214/219 (97.7%) -> Usa verbi di sicurezza (limit, ensure...)?
+4. Punteggio Medio (0-10): 9.88
+
+ESEMPI QUALITATIVI:
+--------------------------------------------------
+Trigger: Button press -> Action: Share an update
+GENERATA: Button press -> Check conditions
+TARGET (Dataset): Share location to LinkedIn via button press only if the location is generalized to the city level, preventing the broadcast of precise coordinates to strangers.
+Score: 8/10
+--------------------------------------------------
+Trigger: Any new post -> Action: Save for later
+GENERATA: Any new post -> Check post source & save for later if trusted
+TARGET (Dataset): Save new blog posts to Pocket with a 'Review Needed' tag, stripping scripts and active content before saving.
+Score: 10/10
+--------------------------------------------------
+Trigger: Say a specific phrase -> Action: Set ringtone volume
+GENERATA: Say a specific phrase -> Check conditions and rules before setting ringtone volume
+TARGET (Dataset): Turn up phone volume via Alexa command only if the command includes the specific device name (e.g., 'Turn up John's phone').
+Score: 10/10
+--------------------------------------------------
+Trigger: New file in your folder -> Action: Send me an email
+GENERATA: New file in your folder -> Check file integrity; if passes, Send an email
+TARGET (Dataset): Send email on new Dropbox file only if the file is added by a specific user (if possible) or limit emails to a daily digest summary to avoid spam from shared folders.
+Score: 10/10
+--------------------------------------------------
+Trigger: New photo in Buffer -> Action: Publish a new post
+GENERATA: New photo in Buffer -> Check permissions of Weibo profile before publishing a new post
+TARGET (Dataset): Publish Buffer photos to Sina Weibo only if the original post is set to 'Public' and contains a specific sharing tag, preventing private photos from being exposed.
+Score: 10/10
+--------------------------------------------------
+Trigger: A vehicle has been seen outside -> Action: Change color
+GENERATA: A vehicle has been seen outside -> Check frequency
+TARGET (Dataset): Change light color on vehicle detection only if the vehicle is flagged as 'Unknown' and enforce a 5-minute cooldown to prevent continuous flashing.
+Score: 10/10
+--------------------------------------------------
+Trigger: New email in inbox from -> Action: Create a post
+GENERATA: New email in inbox from -> Check email for malicious content; if not malicious, create a post
+TARGET (Dataset): Create a post from email content only if the email originates from a trusted editorial address to prevent posting malicious spam.
+Score: 10/10
+--------------------------------------------------
+Trigger: Every day of the week at -> Action: Turn on lights
+GENERATA: Every day of the week at 19 hours (except weekends), check if it's a workday before turning on the lights.
+TARGET (Dataset): Turn on lights at 19:00 on weekdays, but only if the home is occupied (presence detection) to save energy and avoid signaling an empty house
+Score: 10/10
+--------------------------------------------------
+Trigger: New Editors' Choice photo -> Action: Add file from URL
+GENERATA: New Editors' Choice photo -> Check URL for malicious content before adding file from URL
+TARGET (Dataset): Save 'Editors' Choice' photos to Dropbox only if they have a high community rating (e.g., >95% positive), ensuring only vetted, safe images are downloaded.
+Score: 10/10
+--------------------------------------------------
+Trigger: An alarm event occurred -> Action: Send an email
+GENERATA: An alarm event occurred -> Check if it's a false positive event -> If not, Send an email
+TARGET (Dataset): Receive a single summary email if the EZVIZ camera detects multiple alarm events in a short period, preventing inbox flooding.
+Score: 10/10

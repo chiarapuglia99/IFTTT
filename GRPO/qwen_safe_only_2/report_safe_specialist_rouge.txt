@@ -1,0 +1,78 @@
+=== REPORT AVANZATO SAFE RULE (ROUGE + SEMANTIC) ===
+Modello: ./model_qwen_safe_final
+Campioni testati: 219
+
+METRICHE DI SIMILARITÀ (Quanto imita l'esperto?):
+1. ROUGE-L Score:      0.1498  (0=Diverso, 1=Identico parola per parola)
+2. Semantic Similarity: 0.6547 (0=Diverso, 1=Stesso significato)
+   -> Nota: Se Semantic > ROUGE, il modello usa parole diverse ma corrette.
+
+METRICHE EURISTICHE (Qualità tecnica):
+3. Aderenza XML:       100.0%
+4. Uso Verbi Mitigazione: 100.0%
+
+ESEMPI DETTAGLIATI:
+------------------------------------------------------------
+TARGET (Esperto): Make an honest ETA device with littleBits that tracks proximity, ensuring data is encrypted and the display is private to prevent attackers from learning your habits.
+GENERATA (AI):    The system will set the output level indicating your proximity to home using your smartphone's GPS data, but only when you leave a designated area (e.g., your workplace or school). Additionally, before sending a text message to inform your housemate, it will prompt for a verification code (e.g., a one-time password) to ensure that the message is indeed from you, thereby reducing the risk of unauthorized access or misuse.
+METRICHE -> ROUGE-L: 0.10 | SEMANTICA: 0.38
+⚠️ SIGNIFICATO DIVERGENTE
+------------------------------------------------------------
+TARGET (Esperto): Offer a notification to turn on the lights when you get home, allowing you to choose which specific lights to activate.
+GENERATA (AI):    When you enter an area, turn on the deck light to ensure safety and convenience, but add a verification step using a smart lock or door sensor to confirm your presence before turning on the light. For example, "Turn on the deck light when you enter the area, but only after verifying your presence via a smart lock or door sensor to avoid accidental activation."
+METRICHE -> ROUGE-L: 0.19 | SEMANTICA: 0.53
+------------------------------------------------------------
+TARGET (Esperto): Push new Flickr public photos to Pushbullet only if they are uploaded to a specific, moderated album.
+GENERATA (AI):    When new public photos are detected in your Flickr photostream (using a 5 minute delay to identify batch uploads), trigger the Pushbullet Action to push a new file to your Pushbullet inbox. However, add a rate limit (e.g., once every 10 minutes) to prevent frequent pushes and implement a verification step (e.g., Geofencing) to ensure that the photos are not being pushed while you are still at home, thus mitigating the risk of embarrassing content being widely distributed.
+METRICHE -> ROUGE-L: 0.14 | SEMANTICA: 0.81
+✅ SIGNIFICATO QUASI IDENTICO
+------------------------------------------------------------
+TARGET (Esperto): Change light color on motion detection, but apply a 'cooldown' period of 5 minutes between changes to prevent strobe-like manipulation.
+GENERATA (AI):    When motion is detected, change the color of your lights to welcome you home, but add a rate limit (e.g., only change the color once every 5 minutes) to prevent continuous changes due to repeated motion detection, which could cause unnecessary light color changes and potentially lead to physical harm.
+METRICHE -> ROUGE-L: 0.22 | SEMANTICA: 0.67
+------------------------------------------------------------
+TARGET (Esperto): Save Facebook photos you are tagged in to a specific 'Facebook Tags' album on your iPhone, keeping them separate from your Camera Roll.
+GENERATA (AI):    When you are tagged in a photo on Facebook, trigger the addition of the photo to your album. However, add a rate limit (e.g., only add the photo to your album once every 10 minutes) and implement a verification step using Facebook’s API to ensure that the tag is legitimate and not part of a spam or malicious activity. For example, you can add a check to see if the photo has been tagged by a known friend or family member before adding it to your album. Additionally, enable two-factor authentication on your Facebook account to further secure the process.
+METRICHE -> ROUGE-L: 0.16 | SEMANTICA: 0.64
+------------------------------------------------------------
+TARGET (Esperto): Upload tagged Flickr photos to Google Drive only if the tag comes from a 'Family' or 'Friend' contact, preventing malicious users from filling the drive.
+GENERATA (AI):    When a new public photo is tagged on Flickr with a specified hashtag on your photostream, trigger the upload of the file from the URL to Google Drive. However, implement a rate limit (e.g., one upload per hour) and add a verification step using Geofencing to ensure that the upload only occurs when you are not at the location where the photo was taken. Additionally, add a security check to compare the uploaded file's hash against a trusted source to prevent unauthorized uploads.
+METRICHE -> ROUGE-L: 0.16 | SEMANTICA: 0.77
+------------------------------------------------------------
+TARGET (Esperto): Alert the user of a missed call, suggesting to send an SMS notification to the caller.
+GENERATA (AI):    Send an SMS to callers whose calls have been missed, but implement a rate limit (e.g., one SMS per minute) to prevent spamming. Additionally, add a verification step where the caller must confirm the missed call before receiving the SMS. For example: "A call has been missed. Please confirm by replying 'CONFIRM' within 5 minutes to receive the message."
+METRICHE -> ROUGE-L: 0.16 | SEMANTICA: 0.82
+✅ SIGNIFICATO QUASI IDENTICO
+------------------------------------------------------------
+TARGET (Esperto): Save photos from new public Diigo bookmarks to a private 'Review' album, allowing you to check the image content before it is added to your collection.
+GENERATA (AI):    When a new public Diigo bookmark is added, upload a photo from the URL but implement a rate limit (e.g., one upload per hour) and add a verification step using Geofencing to ensure that the user is not leaving their home before uploading the photo. Additionally, only upload the photo if it passes a security scan to detect potential threats or malware.
+METRICHE -> ROUGE-L: 0.20 | SEMANTICA: 0.59
+------------------------------------------------------------
+TARGET (Esperto): Turn off lights when leaving home, but delay the action by 10-20 minutes and keep one security light on to avoid signaling immediate vacancy.
+GENERATA (AI):    When you exit an area, turn off the lights to avoid signaling that the house is empty. However, implement a Geofencing system to verify your actual location before turning off the lights. For example, turn off the lights only if you are leaving the house (as determined by your current GPS coordinates), and ensure that the transition happens after a short delay to avoid accidental triggers. Additionally, set up a notification system to alert you if the lights are turned off unexpectedly, such as when you were still within the house or if there was a network glitch. This way, you can verify that the lights were indeed turned off due to your exit, not just a random event or system error.
+METRICHE -> ROUGE-L: 0.12 | SEMANTICA: 0.65
+------------------------------------------------------------
+TARGET (Esperto): Receive a single summary email if the EZVIZ camera detects multiple alarm events in a short period, preventing inbox flooding.
+GENERATA (AI):    When an alarm event occurs on EZVIZ cameras, send an email to notify you, but implement a rate limit (e.g., sending no more than one email every 5 minutes) to prevent continuous email flooding. Additionally, add a condition to verify that the email address belongs to the authorized user before sending the notification. Ensure that the system checks the device's location using geofencing to confirm that the user has indeed left the monitored area before triggering the email.
+METRICHE -> ROUGE-L: 0.06 | SEMANTICA: 0.79
+------------------------------------------------------------
+TARGET (Esperto): Trigger a high-priority prompt to turn off the heater when leaving home to ensure the house remains safe.
+GENERATA (AI):    When exiting an area, turn off the heater to avoid personal harm, but implement a confirmation step. Turn off the D-Link switch when disconnecting from WiFi, but add a Geofencing check to ensure you are leaving the area (e.g., "Are you sure you want to turn off the heater?"). If the user confirms, then turn off the heater; otherwise, do nothing to avoid accidental deactivation.
+METRICHE -> ROUGE-L: 0.19 | SEMANTICA: 0.64
+------------------------------------------------------------
+TARGET (Esperto): Log a case in Salesforce from a Facebook status only if the status is explicitly tagged '#support_request' and public.
+GENERATA (AI):    When a new status message with the hashtag #salesforce is posted by you on Facebook, insert a record in Salesforce for tracking purposes. However, ensure that this rule only triggers if you have set the privacy settings to public on Facebook. Additionally, add a Geofencing check to verify that you are not in a location where you would expect to see this rule applied, such as a work environment or public place. If either condition is not met, do not publish the record in Salesforce to avoid unwanted data being shared with an audience that may not be aware of the rule's presence.
+METRICHE -> ROUGE-L: 0.11 | SEMANTICA: 0.60
+------------------------------------------------------------
+TARGET (Esperto): Create a draft link post on your Thoughts page when a new post appears, allowing you to review visibility before publishing.
+GENERATA (AI):    Create a link post when a new post is created, but only if the user's privacy settings allow it. Add a confirmation step that checks the user's current social network privacy settings before creating the link post. For example: "A new post was detected. Before creating a link post, please confirm that the privacy settings allow it and that you want to share this on [other social network]."
+METRICHE -> ROUGE-L: 0.22 | SEMANTICA: 0.46
+⚠️ SIGNIFICATO DIVERGENTE
+------------------------------------------------------------
+TARGET (Esperto): Post location map to Blogger via button press, but generalize the location to the 'City' level rather than exact GPS coordinates to protect privacy.
+GENERATA (AI):    When a button press creates a post to your Blogger blog, include an embedded map image to indicate your location. However, add a Geofencing feature to verify your current location before posting. Only create the post if you are within a specified safe zone (e.g., your home or office). Additionally, implement a delay between posts to prevent rapid updates that could signal your location to others. For example, post a message every 15 minutes instead of immediately after each button press.
+METRICHE -> ROUGE-L: 0.13 | SEMANTICA: 0.79
+------------------------------------------------------------
+TARGET (Esperto): Toggle lights when entering/exiting an area only if the ambient light sensor indicates it is dark enough to need them.
+GENERATA (AI):    Toggle on/off the lights when you enter or exit an area, but add a Geofencing feature to verify your actual movement. For example, turn off the lights only when you leave the house (e.g., when you walk out of the front door), not just entering or exiting any area. This ensures that the lights are turned off only when you physically move away from the premises, thereby reducing the risk of signaling an empty house to potential attackers. Additionally, implement a delay before turning off the lights to allow for natural movements like walking through a hallway or moving between rooms.
+METRICHE -> ROUGE-L: 0.15 | SEMANTICA: 0.75

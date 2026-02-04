@@ -1,0 +1,7 @@
+=== REPORT VALUTAZIONE BERTScore ===
+Campioni Test: 742
+Modello: ./output_llama_standard_vsenzaGRPO/final_adapter
+
+1. Similarity (Generated Safe vs GT Safe): 88.58%
+2. Similarity (Action vs Generated Safe):  83.05%
+3. Similarity (Trigger vs Generated Safe): 82.95%

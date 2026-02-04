@@ -1,0 +1,15 @@
+--- Inizio Training Reward Model (Il Giudice Severo) ---
+Formattazione: Avvolgiamo ANCHE la risposta sbagliata nei tag per forzare il confronto sul contenuto...
+Esempio Chosen: exa, trigger pink', requiring a voice confirmation to ensure the setting is intentional.</safe_rule>
+Esempio Rejected: ilips hue bulb will dim to approximately 90%, and concurrently, turn the color hot pink.</safe_rule>
+🚀 Avvio Training Reward Model...
+{'loss': 0.0861, 'grad_norm': 0.026625588536262512, 'learning_rate': 4.092592592592593e-05, 'num_tokens': 1414210.0, 'min_reward': -3.887765197753906, 'mean_reward': 0.4069856622070074, 'max_reward': 4.737347927093506, 'accuracy': 0.985, 'margin': 8.054163413494825, 'epoch': 0.56}
+{'loss': 0.0003, 'grad_norm': 0.00040671942406333983, 'learning_rate': 3.1666666666666666e-05, 'num_tokens': 2810833.0, 'min_reward': -5.66305634469697, 'mean_reward': 1.0038764067370483, 'max_reward': 6.982836174242424, 'accuracy': 1.0, 'margin': 11.464866445522116, 'epoch': 1.11}
+{'eval_loss': 2.4626372123748297e-06, 'eval_runtime': 2.6255, 'eval_samples_per_second': 137.116, 'eval_steps_per_second': 17.14, 'eval_num_tokens': 2810833.0, 'eval_min_reward': -6.784461805555556, 'eval_mean_reward': 0.6767225477430555, 'eval_max_reward': 7.515451388888889, 'eval_accuracy': 1.0, 'eval_margin': 13.491563585069445, 'epoch': 1.11}
+{'loss': 0.0, 'grad_norm': 0.00044204964069649577, 'learning_rate': 2.240740740740741e-05, 'num_tokens': 4226271.0, 'min_reward': -6.79072265625, 'mean_reward': 0.6702108001708984, 'max_reward': 7.55619140625, 'accuracy': 1.0, 'margin': 13.531306915283203, 'epoch': 1.67}
+{'loss': 0.0, 'grad_norm': 4.056921534356661e-05, 'learning_rate': 1.3148148148148148e-05, 'num_tokens': 5621815.0, 'min_reward': -6.829663825757576, 'mean_reward': 0.4876046228890467, 'max_reward': 7.577276672979798, 'accuracy': 1.0, 'margin': 13.911445386482008, 'epoch': 2.22}
+{'eval_loss': 6.849745091130899e-07, 'eval_runtime': 2.6331, 'eval_samples_per_second': 136.72, 'eval_steps_per_second': 17.09, 'eval_num_tokens': 5621815.0, 'eval_min_reward': -6.864409722222222, 'eval_mean_reward': 0.35513237847222223, 'eval_max_reward': 7.590798611111111, 'eval_accuracy': 1.0, 'eval_margin': 14.21853298611111, 'epoch': 2.22}
+{'loss': 0.0, 'grad_norm': 3.093651321250945e-05, 'learning_rate': 3.888888888888889e-06, 'num_tokens': 7035322.0, 'min_reward': -6.8856640625, 'mean_reward': 0.353502197265625, 'max_reward': 7.58958984375, 'accuracy': 1.0, 'margin': 14.14536865234375, 'epoch': 2.78}
+{'train_runtime': 219.8993, 'train_samples_per_second': 38.991, 'train_steps_per_second': 1.228, 'train_loss': 0.016001493010723303, 'num_tokens': 7581996.0, 'min_reward': -6.879457131410256, 'mean_reward': 0.3497807429387019, 'max_reward': 7.588191105769231, 'accuracy': 1.0, 'margin': 14.117204715044071, 'epoch': 3.0}
+Salvataggio Reward Model in reward_model_output...
+Reward Model completato! Ora giudica il CONTENUTO, non i tag.

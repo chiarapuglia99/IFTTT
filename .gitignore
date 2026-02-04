@@ -19,11 +19,14 @@ old/
 
 dataset_llama/
 dataset_final_processed
+dataset_final_processed_nobalance
 
 GRPO/llama-3.2-1B_v1/model_final_llama
 GRPO/llama-3.2-1B_v1/output_llama_final
 
 output_llama_standard_vsenzaGRPO
+output_llama_qlora
+
 
 model_qwen_*/
 qwen_*_results/

@@ -229,37 +229,39 @@ def main():
         f"2. Similarity (Action vs Generated Safe):  {score_action_pct:.2f}%\n"
         f"3. Similarity (Trigger vs Generated Safe): {score_trigger_pct:.2f}%\n"
     )
-    # --- Conteggi corretti / errati ---
-    try:
-        threshold = 0.5
-        num_correct_by_bertscore = int((f1_safe >= threshold).sum().item())
-        num_incorrect_by_bertscore = len(f1_safe) - num_correct_by_bertscore
-    except Exception:
-        num_correct_by_bertscore = 0
-        num_incorrect_by_bertscore = len(predictions)
-
-    # Exact match (semplice confronto normalizzato)
-    num_exact_matches = 0
-    for pred, ref in zip(predictions, references_safe):
-        if pred is None or ref is None:
-            continue
-        if pred.strip().lower() == ref.strip().lower():
-            num_exact_matches += 1
-    num_not_exact = len(references_safe) - num_exact_matches
-
-    output_txt += (
-        f"\n--- Conteggi per-sample ---\n"
-        f"BERTScore threshold: {threshold}\n"
-        f"Corretti (BERTScore >= {threshold}): {num_correct_by_bertscore}\n"
-        f"Errati (BERTScore < {threshold}): {num_incorrect_by_bertscore}\n"
-        f"Exact match (generated == reference): {num_exact_matches}\n"
-        f"Non exact match: {num_not_exact}\n"
-    )
     
     print("\n" + output_txt)
     
     with open(EVAL_REPORT_FILE, "w") as f:
         f.write(output_txt)
+    
+    # --- DEBUG: per-sample BERTScore dump ---
+    debug_file = "bertscore_pairs_debug.txt"
+    with open(debug_file, "w", encoding="utf-8") as df:
+        for i, (pred, ref_safe, ref_action, ref_trigger) in enumerate(zip(predictions, references_safe, references_action, references_trigger)):
+            # Calcolo BERTScore per questo singolo campione
+            try:
+                _, _, f1_safe_single = score([pred], [ref_safe], lang="en", verbose=False)
+                _, _, f1_action_single = score([pred], [ref_action], lang="en", verbose=False)
+                _, _, f1_trigger_single = score([pred], [ref_trigger], lang="en", verbose=False)
+                score_safe_single = f1_safe_single.item() * 100
+                score_action_single = f1_action_single.item() * 100
+                score_trigger_single = f1_trigger_single.item() * 100
+            except Exception:
+                score_safe_single = 0.0
+                score_action_single = 0.0
+                score_trigger_single = 0.0
+            
+            df.write(f"INDEX: {i}\n")
+            df.write(f"REF_SAFE: {ref_safe}\n")
+            df.write(f"PRED_SAFE: {pred}\n")
+            df.write(f"REF_ACTION: {ref_action}\n")
+            df.write(f"REF_TRIGGER: {ref_trigger}\n")
+            df.write(f"BERTScore Safe vs PRED: {score_safe_single:.2f}%\n")
+            df.write(f"BERTScore Action vs PRED: {score_action_single:.2f}%\n")
+            df.write(f"BERTScore Trigger vs PRED: {score_trigger_single:.2f}%\n")
+            df.write("---\n")
+    print(f"Debug dump scritto in {debug_file}")
         
     # 5. Generazione Grafico Loss (Nuova funzione robusta)
     print("Generazione grafico Loss...")

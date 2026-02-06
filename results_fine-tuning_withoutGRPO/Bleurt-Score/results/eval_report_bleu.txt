@@ -1,0 +1,12 @@
+=== REPORT VALUTAZIONE BLEU ===
+Campioni Test: 742
+Modello: ./output_llama_standard_vsenzaGRPO/final_adapter
+
+BLEU (corpus vs safe): 9.21
+BLEU (corpus vs action): 0.45
+BLEU (corpus vs trigger): 0.26
+
+BLEU threshold: 50.0
+Percentuale (BLEU >= 50.0) vs safe: 0.13%
+Percentuale (BLEU >= 50.0) vs action: 0.00%
+Percentuale (BLEU >= 50.0) vs trigger: 0.00%

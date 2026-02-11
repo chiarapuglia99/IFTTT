@@ -1,10 +1,4 @@
-=== REPORT VALUTAZIONE METEOR ===
+=== REPORT VALUTAZIONE METEOR CORRETTO ===
 Campioni Test: 742
-Modello: ./output_llama_standard_vsenzaGRPO/final_adapter
-
-METEOR (avg vs safe): 0.00%
-
-METEOR threshold: 0.5
-Percentuale (METEOR >= 0.5) vs safe: 0.00%
-Percentuale (METEOR >= 0.5) vs action: 0.00%
-Percentuale (METEOR >= 0.5) vs trigger: 0.00%
+METEOR Medio: 33.43%
+Percentuale sopra soglia 0.5: 10.78%

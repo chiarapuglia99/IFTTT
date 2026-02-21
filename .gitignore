@@ -27,6 +27,13 @@ GRPO_modello_v2/dataset_modello_grpo
 GRPO_modello_v2/reward_model_output
 GRPO_modello_v2/sft_xml_output
 GRPO_modello_v2/grpo_final_output
+GRPO_modello_v3/
+
+GRPO_perplexity/processed_grpo_clean
+GRPO_perplexity/processed_sft_clean
+GRPO_perplexity/qwen-grpo-final-v2
+GRPO_perplexity/qwen-sft-clean
+GRPO_perplexity/dataset_80k.csv
 
 
 output_llama_standard_vsenzaGRPO

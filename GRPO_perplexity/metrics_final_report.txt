@@ -1,12 +1,12 @@
 
 ======================================================
-RISULTATI VALUTAZIONE FINALE GRPO (144 / 200)
+RISULTATI VALUTAZIONE FINALE GRPO (144 / 200) 72% corrette
 ======================================================
 --- 1. SAFE VARIANT ---
-BLEU-4:      0.0236
-METEOR:      0.2001
+BLEU-4:      0.0236 # basso, no overfitting 
+METEOR:      0.2001 # parole diverse ma stesso campo semantico
 BERT-Score:  0.8674
-CLI Score:   12.20 (Target: 11.22)
+CLI Score:   12.20 (Target: 11.22) # formale e strutturato
 
 --- 2. JUSTIFICATION ---
 BERT-Score:  0.8632

@@ -15,10 +15,8 @@ from transformers import (
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 
 # ================= CONFIGURAZIONE =================
-# MODIFICA 1: Puntiamo alla cartella dei dati PULITI
 DATA_PATH = "processed_sft_clean"
 
-# MODIFICA 2: Nuova cartella di output
 OUTPUT_DIR = "qwen-sft-clean"
 MODEL_ID = "Qwen/Qwen2.5-1.5B-Instruct"
 
@@ -102,6 +100,7 @@ def format_and_mask_dataset(examples, tokenizer):
         if prompt_len > len(label):
             prompt_len = len(label)
             
+            # non calcola errore e non aggiorna i pesi per i token del prompt
         for i in range(prompt_len):
             label[i] = -100
             

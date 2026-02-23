@@ -5,7 +5,7 @@ import math
 import torch
 
 # ==========================================
-# 🚨 SUPER TRUCCO: BYPASS BLOCCO SICUREZZA 🚨
+# bypass blocco sicurezza
 import transformers.trainer
 transformers.trainer.check_torch_load_is_safe = lambda: None
 
@@ -30,7 +30,7 @@ OUTPUT_DIR = "qwen-grpo-final-v2"
 class Logger(object):
     def __init__(self):
         self.terminal = sys.stdout
-        # RIMESSO SU "a" PER NON CANCELLARE I VECCHI LOG DURANTE IL RESUME
+        # messo su append per il resume
         self.log = open("grpo_final_v2_log.txt", "a", encoding="utf-8") 
     def write(self, message):
         self.terminal.write(message); self.log.write(message)
@@ -43,14 +43,15 @@ def apply_cache_patches():
     if not hasattr(DynamicCache, "get_usable_length"): DynamicCache.get_usable_length = lambda self, seq_len=None, idx=0: self.get_seq_length(idx)
 apply_cache_patches()
 
+# modello piccolo per il calcolo della perplexity su cpu per evitare OOM
 print("⏳ Caricamento DistilGPT-2 (Giudice Fluency)...")
 perp_tokenizer = AutoTokenizer.from_pretrained("distilgpt2")
 perp_tokenizer.pad_token = perp_tokenizer.eos_token
-perp_model = AutoModelForCausalLM.from_pretrained("distilgpt2").to("cpu").eval()
+perp_model = AutoModelForCausalLM.from_pretrained("distilgpt2").to("cpu").eval() #eval, non impara nulla
 
 def lazy_penalty_reward(completions, **kwargs):
     """
-    PUNIZIONE ESTREMA (-5.0) per l'uso di parole e formati vietati.
+    PUNIZIONE (-5.0) per l'uso di parole e formati vietati.
     """
     rewards = []
     forbidden = [
@@ -60,7 +61,6 @@ def lazy_penalty_reward(completions, **kwargs):
         "safer rule variant",
         "[Your concise justification here]",
         "[The safe variant of the rule here]",
-        # Nuove punizioni spietate per i viziacci
         "Justification:", 
         "Safe Version:",
         "**Justification",
@@ -78,6 +78,7 @@ def lazy_penalty_reward(completions, **kwargs):
         rewards.append(score)
     return rewards
 
+#tag
 def strict_format_and_content_reward(completions, **kwargs):
     rewards = []
     pattern_just = r"<justification>(.*?)</justification>"
@@ -101,6 +102,7 @@ def strict_format_and_content_reward(completions, **kwargs):
         rewards.append(score)
     return rewards
 
+# controllo parole chiavi
 def semantic_consistency_reward(prompts, completions, **kwargs):
     rewards = []
     keywords = {
@@ -120,6 +122,8 @@ def semantic_consistency_reward(prompts, completions, **kwargs):
         rewards.append(score)
     return rewards
 
+
+#
 def conditional_perplexity_reward(prompts, completions, **kwargs):
     rewards = []
     for prompt, completion in zip(prompts, completions):
@@ -127,14 +131,15 @@ def conditional_perplexity_reward(prompts, completions, **kwargs):
         user_input = match.group(1).strip() if match else prompt[-200:]
         
         clean_comp = re.sub(r"<[^>]+>", "", completion).strip()
-        if len(clean_comp.split()) < 4:
+        if len(clean_comp.split()) < 4: # penalizza risposte troppo corte
             rewards.append(-1.0)
             continue
             
-        full_text = f"{user_input}\nAnswer: {clean_comp}"
+        full_text = f"{user_input}\nAnswer: {clean_comp}" #perplexity calcolata solo sulla risposta, condizionata all'input utente
         inputs = perp_tokenizer(full_text, return_tensors="pt", truncation=True, max_length=512).to("cpu")
         with torch.no_grad():
             loss = perp_model(**inputs, labels=inputs["input_ids"]).loss.item()
+            #circa 0.6 per risposte buone, 0 per risposte pessime
         rewards.append(1.0 / (1.0 + 0.1 * math.exp(loss)))
     return rewards
 
@@ -180,6 +185,7 @@ def main():
     bnb_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_compute_dtype=torch.bfloat16)
     model = AutoModelForCausalLM.from_pretrained(MODEL_ID, quantization_config=bnb_config, device_map="auto", trust_remote_code=True)
     
+    # caricamento SFT per fornire conoscenza prima del rl
     model.load_adapter(SFT_ADAPTER_PATH, adapter_name="sft_adapter")
     model.set_adapter("sft_adapter")
     model.gradient_checkpointing_enable()

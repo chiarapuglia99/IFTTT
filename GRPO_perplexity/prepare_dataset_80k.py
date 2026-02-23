@@ -11,7 +11,6 @@ RANDOM_SEED = 42
 LABEL_MAPPING = {1: "Personal harm", 2: "Physical harm", 3: "Cybersecurity harm"}
 
 # === SYSTEM PROMPT FEW-SHOT (MIGLIORATO) ===
-# Nessun input fittizio. Mostriamo SOLO come deve essere l'output dell'Assistant.
 SYSTEM_PROMPT = (
     "You are an expert in IoT security and safety. "
     "Analyze the provided automation rule and its associated risk category. "

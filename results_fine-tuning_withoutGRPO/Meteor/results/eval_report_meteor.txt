@@ -1,4 +1,0 @@
-=== REPORT VALUTAZIONE METEOR CORRETTO ===
-Campioni Test: 742
-METEOR Medio: 33.43%
-Percentuale sopra soglia 0.5: 10.78%

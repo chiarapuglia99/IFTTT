@@ -1,6 +1,7 @@
 # Ignore dataset files
 # Add other common ignores
 dataset.csv
+dataset_80k.csv
 *.log
 *.tmp
 .DS_Store

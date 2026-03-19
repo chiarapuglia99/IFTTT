@@ -1,0 +1,7 @@
+=== METRICA: CLI-Score (Justification) ===
+
+metric: CLI-Score (Justification)
+model_cli: 14.307458394598946
+reference_cli: 11.046905442872905
+description: Coleman-Liau Index: Basato su lettere, numeri e spazi (Target ≈ 12-14)
+samples_count: 157

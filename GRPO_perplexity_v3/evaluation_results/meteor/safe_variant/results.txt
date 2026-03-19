@@ -1,0 +1,5 @@
+=== METRICA: METEOR (Safe) ===
+
+metric: METEOR (Safe Variant)
+meteor_score: 0.20339851268841472
+samples_count: 157

@@ -1,0 +1,13 @@
+=== METRICA: BLEU-4 (Safe) ===
+
+metric: BLEU (Safe Variant)
+bleu_score: 0.02119156671447976
+precisions:
+[
+  0.19421323820848196,
+  0.02904479443649008,
+  0.009087066779374472,
+  0.003934426229508197
+]
+
+samples_count: 157

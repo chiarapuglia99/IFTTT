@@ -1,0 +1,7 @@
+=== METRICA: CLI-Score (Safe) ===
+
+metric: CLI-Score (Safe Variant)
+model_cli: 12.019749269869553
+reference_cli: 11.256848569945223
+description: Coleman-Liau Index: Basato su lettere, numeri e spazi (Target ≈ 12-14)
+samples_count: 157

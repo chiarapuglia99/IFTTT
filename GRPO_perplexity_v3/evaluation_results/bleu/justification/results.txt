@@ -1,0 +1,13 @@
+=== METRICA: BLEU-4 (Justification) ===
+
+metric: BLEU (Justification)
+bleu_score: 0.005402648166756412
+precisions:
+[
+  0.1905467110946563,
+  0.012081550465643092,
+  0.001412248042110669,
+  0.0002620545073375262
+]
+
+samples_count: 157

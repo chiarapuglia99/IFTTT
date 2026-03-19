@@ -1,0 +1,5 @@
+=== METRICA: METEOR (Justification) ===
+
+metric: METEOR (Justification)
+meteor_score: 0.21481715340682833
+samples_count: 157

@@ -1,0 +1,70 @@
+
+======================================================
+RISULTATI VALUTAZIONE FINALE GRPO (157 / 200)
+======================================================
+
+✅ Tutti i risultati dettagliati sono salvati nella cartella: evaluation_results/
+
+📊 STRUTTURA RISULTATI:
+───────────────────────
+evaluation_results/
+├── bleu/
+│   ├── safe_variant/
+│   │   ├── results.json
+│   │   └── results.txt
+│   └── justification/
+│       ├── results.json
+│       └── results.txt
+├── meteor/
+│   ├── safe_variant/
+│   │   ├── results.json
+│   │   └── results.txt
+│   └── justification/
+│       ├── results.json
+│       └── results.txt
+├── bert_score/
+│   ├── safe_variant/
+│   │   ├── results.json
+│   │   └── results.txt
+│   └── justification/
+│       ├── results.json
+│       └── results.txt
+├── cli_score/
+│   ├── safe_variant/
+│   │   ├── results.json
+│   │   └── results.txt
+│   └── justification/
+│       ├── results.json
+│       └── results.txt
+├── bleurt/
+│   ├── safe_variant/
+│   │   ├── results.json
+│   │   └── results.txt
+│   └── justification/
+│       ├── results.json
+│       └── results.txt
+├── model_generations_final.txt
+└── summary.txt
+
+📈 RIEPILOGO METRICHE:
+──────────────────────
+--- 1. SAFE VARIANT ---
+BLEU-4:          0.0212
+METEOR:          0.2034
+BERT-Score F1:   0.8645
+CLI Score:       12.02 (Reference: 11.26)
+
+--- 2. JUSTIFICATION ---
+BLEU-4:          0.0054
+METEOR:          0.2148
+BERT-Score F1:   0.8703
+CLI Score:       14.31 (Reference: 11.05)
+
+======================================================
+Note:
+- Ogni metrica ha una cartella dedicata con risultati in JSON e TXT
+- I file JSON contengono i dati completi per analisi ulteriore
+- CLI Score (Coleman-Liau Index): Target ≈ 12-14 (text universitario-tecnico)
+- BERT-Score: Correlazione semantica con riferimento
+- BLEURT-Score: Valutazione qualitativa basata su modello (se disponibile)
+=====================================================

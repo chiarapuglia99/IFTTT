@@ -36,6 +36,11 @@ GRPO_perplexity/qwen-grpo-final-v2
 GRPO_perplexity/qwen-sft-clean
 GRPO_perplexity/dataset_80k.csv
 
+GRPO_perplexity_v4/dataset_80k.csv
+GRPO_perplexity_v4/processed_grpo_clean
+GRPO_perplexity_v4/processed_sft_clean
+GRPO_perplexity_v4/qwen-grpo-final-v2
+GRPO_perplexity_v4/qwen-sft-clean
 
 output_llama_standard_vsenzaGRPO
 output_llama_qlora

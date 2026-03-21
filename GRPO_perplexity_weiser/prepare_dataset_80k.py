@@ -10,16 +10,15 @@ RANDOM_SEED = 42
 
 LABEL_MAPPING = {1: "Personal harm", 2: "Physical harm", 3: "Cybersecurity harm"}
 
-# === SYSTEM PROMPT FEW-SHOT (MIGLIORATO) ===
+# === SYSTEM PROMPT PULITO ===
 SYSTEM_PROMPT = (
     "You are an expert in IoT security and safety. "
-    "Analyze the provided automation rule and its associated risk category. "
-    "Output your reasoning strictly inside <justification> tags. "
-    "Then, output a safer version of the rule strictly inside <safe> tags.\n\n"
-    "--- EXAMPLE EXPECTED OUTPUT ---\n"
-    "<justification> This rule is dangerous because an intruder or a stray animal could trigger the motion sensor, causing the front door to unlock and granting unauthorized access to the house. </justification>\n"
-    "<safe> If motion is detected outside, turn on the porch light and send a notification to the user's phone, but do not automatically unlock the door. </safe>\n"
-    "-------------------------------"
+    "Your task is to analyze an automation rule and its associated risk category. "
+    "You must provide a concise justification for why the rule is considered unsafe, "
+    "and generate a safer variant of the rule.\n\n"
+    "Your output must strictly follow this XML format:\n"
+    "<justification> ...analysis of the risk... </justification>\n"
+    "<safe> ...safer rule variant... </safe>"
 )
 
 def create_grpo_prompt(row):
@@ -51,9 +50,9 @@ def save_jsonl(data, filepath):
             f.write('\n')
 
 def main():
-    print("🧹 Generazione Dataset GRPO Pulito V2...")
+    print("🧹 Generazione Dataset GRPO Pulito V2 (Senza Few-Shot)...")
     if not os.path.exists(INPUT_FILE):
-        print(f"❌ Manca {INPUT_FILE}!")
+        print(f"Manca {INPUT_FILE}!")
         return
 
     # Gestione encoding per il file da 80k
@@ -67,13 +66,15 @@ def main():
     
     processed_data = [x for x in df.apply(create_grpo_prompt, axis=1).tolist() if x]
 
-    # Split (usiamo train e test)
+    # Split: creiamo un set di addestramento e uno di validazione (eval)
     train, temp = train_test_split(processed_data, test_size=0.2, random_state=RANDOM_SEED)
-    val, test = train_test_split(temp, test_size=0.5, random_state=RANDOM_SEED)
+    eval_set, _ = train_test_split(temp, test_size=0.5, random_state=RANDOM_SEED)
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     save_jsonl(train, os.path.join(OUTPUT_DIR, 'train_grpo.jsonl'))
-    save_jsonl(test, os.path.join(OUTPUT_DIR, 'test_grpo.jsonl'))
+    
+    # SALVATAGGIO CON NOME CORRETTO: eval_grpo.jsonl
+    save_jsonl(eval_set, os.path.join(OUTPUT_DIR, 'eval_grpo.jsonl'))
     
     print(f"✅ GRPO Dataset pronto in: {OUTPUT_DIR}/")
 

@@ -50,9 +50,9 @@ def save_jsonl(data, filepath):
             json.dump(entry, f); f.write('\n')
 
 def main():
-    print("🧹 Generazione Dataset SFT Pulito...")
+    print("Generazione Dataset SFT Pulito...")
     if not os.path.exists(INPUT_FILE):
-        print(f"❌ Manca {INPUT_FILE}!"); return
+        print(f"Manca {INPUT_FILE}!"); return
 
     df = pd.read_csv(INPUT_FILE)
     processed_data = df.apply(create_sft_conversation, axis=1).tolist()
@@ -66,7 +66,7 @@ def main():
     save_jsonl(val, os.path.join(OUTPUT_DIR, 'validation.jsonl'))
     save_jsonl(test, os.path.join(OUTPUT_DIR, 'test.jsonl'))
     
-    print(f"✅ SFT Dataset pronto in: {OUTPUT_DIR}/")
+    print(f"SFT Dataset pronto in: {OUTPUT_DIR}/")
 
 if __name__ == "__main__":
     main()

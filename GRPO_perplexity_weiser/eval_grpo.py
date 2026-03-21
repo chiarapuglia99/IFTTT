@@ -12,24 +12,22 @@ import evaluate
 from bert_score import score as bert_score_func
 
 # ================= CONFIGURAZIONE =================
-# Puntiamo al modello finale appena sfornato!
-MODEL_PATH = "qwen-grpo-final-v2" 
+MODEL_PATH = "qwen-grpo" 
 BASE_MODEL_ID = "Qwen/Qwen2.5-1.5B-Instruct"
 TEST_FILE = "processed_sft_clean/test.jsonl" 
 NUM_SAMPLES = 200
-OUTPUT_LOG = "model_generations_final.txt"
-OUTPUT_METRICS = "metrics_final_report.txt"
+OUTPUT_LOG = "model_generations_final_GRPO.txt"
+OUTPUT_METRICS = "metrics_final_report_GRPO.txt"
 
-# === SYSTEM PROMPT FEW-SHOT (DEVE ESSERE IDENTICO AL TRAINING) ===
-SMART_SYSTEM_PROMPT = (
+# === SYSTEM PROMPT FEW-SHOT ===
+SYSTEM_PROMPT = (
     "You are an expert in IoT security and safety. "
-    "Analyze the provided automation rule and its associated risk category. "
-    "Output your reasoning strictly inside <justification> tags. "
-    "Then, output a safer version of the rule strictly inside <safe> tags.\n\n"
-    "--- EXAMPLE EXPECTED OUTPUT ---\n"
-    "<justification> This rule is dangerous because an intruder or a stray animal could trigger the motion sensor, causing the front door to unlock and granting unauthorized access to the house. </justification>\n"
-    "<safe> If motion is detected outside, turn on the porch light and send a notification to the user's phone, but do not automatically unlock the door. </safe>\n"
-    "-------------------------------"
+    "Your task is to analyze an automation rule and its associated risk category. "
+    "You must provide a concise justification for why the rule is considered unsafe, "
+    "and generate a safer variant of the rule.\n\n"
+    "Your output must strictly follow this XML format:\n"
+    "<justification> ...analysis of the risk... </justification>\n"
+    "<safe> ...safer rule variant... </safe>"
 )
 
 def extract_xml_tag(text, tag):
@@ -43,20 +41,20 @@ def calculate_cli(texts):
     return np.mean(scores) if scores else 0.0
 
 def main():
-    print(f"🚀 Avvio Valutazione Finale Ufficiale su {NUM_SAMPLES} campioni...")
+    print(f"Avvio Valutazione Finale Ufficiale su {NUM_SAMPLES} campioni...")
 
     dataset = load_dataset("json", data_files={"test": TEST_FILE})["test"]
     if len(dataset) > NUM_SAMPLES: 
         dataset = dataset.select(range(NUM_SAMPLES))
 
-    print("🧠 Caricamento Modello Base + GRPO Adapter Finale...")
+    print("Caricamento Modello Base + GRPO Adapter Finale...")
     bnb_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_compute_dtype=torch.bfloat16)
     model = AutoModelForCausalLM.from_pretrained(BASE_MODEL_ID, quantization_config=bnb_config, device_map="auto", trust_remote_code=True)
     model = PeftModel.from_pretrained(model, MODEL_PATH)
     model.eval()
     tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL_ID)
 
-    print("⚡ Generazione risposte in corso...")
+    print("Generazione risposte in corso...")
     
     gen_justifications, gen_safes = [], []
     ref_justifications, ref_safes = [], []
@@ -66,7 +64,7 @@ def main():
 
         for i, example in tqdm(enumerate(dataset), total=len(dataset)):
             input_msgs = [
-                {"role": "system", "content": SMART_SYSTEM_PROMPT},
+                {"role": "system", "content": SYSTEM_PROMPT},
                 example['messages'][1]  
             ]
             
@@ -106,9 +104,9 @@ def main():
             f_log.write(f"🤖 MODEL SAFE VARIANT: {g_safe}\n")
             f_log.write(f"🧑 HUMAN SAFE VARIANT: {r_safe}\n\n")
 
-    print(f"✅ Generazione completata. Frasi salvate in {OUTPUT_LOG}")
+    print(f"Generazione completata. Frasi salvate in {OUTPUT_LOG}")
 
-    print("📊 Calcolo Metriche Ufficiali...")
+    print("Calcolo Metriche Ufficiali...")
     bleu = evaluate.load("bleu")
     meteor = evaluate.load("meteor")
     
@@ -118,7 +116,7 @@ def main():
     ]
     
     if not valid_safe_indices:
-        print("❌ ERRORE CRITICO: Anche dopo l'estrazione, nessuna stringa è valida. Controlla il log.")
+        print("ERRORE CRITICO: Anche dopo l'estrazione, nessuna stringa è valida. Controlla il log.")
         return
 
     g_safes_clean = [gen_safes[i] for i in valid_safe_indices]
@@ -126,25 +124,35 @@ def main():
     g_just_clean = [gen_justifications[i] for i in valid_safe_indices]
     r_just_clean = [ref_justifications[i] for i in valid_safe_indices]
 
-    res_bleu = bleu.compute(predictions=g_safes_clean, references=[[r] for r in r_safes_clean], max_order=4)
-    res_meteor = meteor.compute(predictions=g_safes_clean, references=r_safes_clean)
+    # Calcolo metriche per SAFE VARIANT
+    res_bleu_safe = bleu.compute(predictions=g_safes_clean, references=[[r] for r in r_safes_clean], max_order=4)
+    res_meteor_safe = meteor.compute(predictions=g_safes_clean, references=r_safes_clean)
     P_safe, R_safe, F1_safe = bert_score_func(g_safes_clean, r_safes_clean, lang="en", verbose=False)
-    P_just, R_just, F1_just = bert_score_func(g_just_clean, r_just_clean, lang="en", verbose=False)
     cli_model_safe = calculate_cli(g_safes_clean)
     cli_human_safe = calculate_cli(r_safes_clean)
+
+    # Calcolo metriche per JUSTIFICATION
+    res_bleu_just = bleu.compute(predictions=g_just_clean, references=[[r] for r in r_just_clean], max_order=4)
+    res_meteor_just = meteor.compute(predictions=g_just_clean, references=r_just_clean)
+    P_just, R_just, F1_just = bert_score_func(g_just_clean, r_just_clean, lang="en", verbose=False)
+    cli_model_just = calculate_cli(g_just_clean)
+    cli_human_just = calculate_cli(r_just_clean)
 
     results = f"""
 ======================================================
 RISULTATI VALUTAZIONE FINALE GRPO ({len(valid_safe_indices)} / {NUM_SAMPLES})
 ======================================================
 --- 1. SAFE VARIANT ---
-BLEU-4:      {res_bleu['bleu']:.4f}
-METEOR:      {res_meteor['meteor']:.4f}
+BLEU-4:      {res_bleu_safe['bleu']:.4f}
+METEOR:      {res_meteor_safe['meteor']:.4f}
 BERT-Score:  {F1_safe.mean().item():.4f}
 CLI Score:   {cli_model_safe:.2f} (Target: {cli_human_safe:.2f})
 
 --- 2. JUSTIFICATION ---
+BLEU-4:      {res_bleu_just['bleu']:.4f}
+METEOR:      {res_meteor_just['meteor']:.4f}
 BERT-Score:  {F1_just.mean().item():.4f}
+CLI Score:   {cli_model_just:.2f} (Target: {cli_human_just:.2f})
 ======================================================
 """
     print(results)

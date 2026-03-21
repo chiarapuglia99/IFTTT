@@ -15,36 +15,17 @@ ENV/
 venv_ia/
 processed_dataset/
 
-# Cartella con vecchi modelli
-old/
-
-dataset_llama/
-dataset_final_processed
-dataset_final_processed_nobalance
-
-GRPO_v1/llama-3.2-1B_v1/model_final_llama
-GRPO_v1/llama-3.2-1B_v1/output_llama_final
-GRPO_modello_v2/dataset_modello_grpo
-GRPO_modello_v2/reward_model_output
-GRPO_modello_v2/sft_xml_output
-GRPO_modello_v2/grpo_final_output
-GRPO_modello_v3/
-
-GRPO_perplexity/processed_grpo_clean
-GRPO_perplexity/processed_sft_clean
-GRPO_perplexity/qwen-grpo-final-v2
-GRPO_perplexity/qwen-sft-clean
-GRPO_perplexity/dataset_80k.csv
-
 GRPO_perplexity_v4/dataset_80k.csv
 GRPO_perplexity_v4/processed_grpo_clean
 GRPO_perplexity_v4/processed_sft_clean
 GRPO_perplexity_v4/qwen-grpo-final-v2
 GRPO_perplexity_v4/qwen-sft-clean
 
-output_llama_standard_vsenzaGRPO
-output_llama_qlora
-
+GRPO_perplexity_weiser/dataset_80k.csv
+GRPO_perplexity_weiser/processed_grpo_clean
+GRPO_perplexity_weiser/processed_sft_clean
+GRPO_perplexity_weiser/qwen-grpo
+GRPO_perplexity_weiser/qwen-sft-clean
 
 model_qwen_*/
 qwen_*_results/
